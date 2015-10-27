@@ -1,0 +1,68 @@
+@charset 'UTF-8';
+
+#map img {
+  max-width: none;
+}
+
+#map label { 
+  width: auto; display:inline; 
+}
+
+.sp-replacer {
+  margin-bottom: 5px;
+  border:none;
+  padding: 0px;
+  background: none repeat scroll 0 0;
+}
+.sp-dd {
+  display: none;
+}
+.sp-preview {
+  height:15px;
+}
+.legendText {
+  margin-left: 0px;
+  padding-left: 0px;
+  font-size: small;
+}
+.navbar{
+  margin-bottom: 0;
+}
+.ui-slider .ui-slider-handle {
+  height:1em;
+  width: 0.5em;
+  margin-left: -0.1em;
+}
+.ui-slider-horizontal {
+    height: 0.3em;
+	margin-top:0.3em;
+}
+.slider-value {
+  margin-top:-2em;
+  font-size: 0.55em;
+}
+.show-selection {
+  background-color: #E5E3E9;
+}
+.tick{
+  font-size: 0.65em;
+  min-height: 0.5em !important;
+  line-height: 1.2em;
+}
+.tick-label{
+  margin-left: -0.5em !important;
+}
+.drawing-control img {
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+.langlink {
+  color: #777;
+  float: none;
+  padding: 0;
+  text-decoration: none;
+  text-shadow: 0 1px 0 #fff;
+}
