@@ -14,3 +14,4 @@ https://joinup.ec.europa.eu/community/eupl/og_page/european-union-public-licence
 * PHP, Memcached
 * Geoserver with https://github.com/thijsbrentjens/geoserver/tree/master/src/community/tjs
 * if you don't link directly to the GDAS file you also need SDMX to GDAS service https://github.com/joostvenema/to-gdas
+* Find/Replace 'localhost' in the files according to your server
