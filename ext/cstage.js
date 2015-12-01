@@ -3,6 +3,8 @@
  * https://joinup.ec.europa.eu/community/eupl/og_page/european-union-public-licence-eupl-v11
  */
 
+var TJS_URL = 'http://tjs.test.pdok.nl/geoserver/tjs';
+
 var tjsdata='[{"ICD10":"A-R_V-Y","definition":"All causes of death (A00-Y89) excluding S00-T98"},{"ICD10":"A_B","definition":"Certain infectious and parasitic diseases (A00-B99)"},{"ICD10":"A15-A19_B90","definition":"Tuberculosis"},{"ICD10":"B15-B19_B942","definition":"Viral hepatitis and sequelae of viral hepatitis"},{"ICD10":"B20-B24","definition":"Human immunodeficiency virus (HIV) disease"},{"ICD10":"A_B_OTH","definition":"Other infectious and parasitic diseases (remainder of A00-B99)"},{"ICD10":"C00-D48","definition":"Neoplasms"},{"ICD10":"C","definition":"Neoplasms"},{"ICD10":"C00-C14","definition":"Malignant neoplasm of lip, oral cavity, pharynx"},{"ICD10":"C15","definition":"Malignant neoplasm of oesophagus"},{"ICD10":"C16","definition":"Malignant neoplasm of stomach"},{"ICD10":"C18-C21","definition":"Malignant neoplasm of colon, rectosigmoid junction, rectum, anus and anal canal"},{"ICD10":"C22","definition":"Malignant neoplasm of liver and intrahepatic bile ducts"},{"ICD10":"C25","definition":"Malignant neoplasm of pancreas"},{"ICD10":"C32","definition":"Malignant neoplasm of larynx"},{"ICD10":"C33_C34","definition":"Malignant neoplasm of trachea, bronchus and lung"},{"ICD10":"C43","definition":"Malignant melanoma of skin"},{"ICD10":"C50","definition":"Malignant neoplasm of breast"},{"ICD10":"C53","definition":"Malignant neoplasm of cervix uteri"},{"ICD10":"C54_C55","definition":"Malignant neoplasm of other parts of uterus"},{"ICD10":"C56","definition":"Malignant neoplasm of ovary"},{"ICD10":"C61","definition":"Malignant neoplasm of prostate"},{"ICD10":"C64","definition":"Malignant neoplasm of kidney, except renal pelvis"},{"ICD10":"C67","definition":"Malignant neoplasm of bladder"},{"ICD10":"C70-C72","definition":"Malignant neoplasm of brain and central nervous system"},{"ICD10":"C73","definition":"Malignant neoplasm of thyroid gland"},{"ICD10":"C81-C85","definition":"Hodgkin disease and lymphomas"},{"ICD10":"C91-C95","definition":"Leukaemia"},{"ICD10":"C88_C90_C96","definition":"Other malignant neoplasm of lymphoid, haematopoietic and related tissue"},{"ICD10":"C_OTH","definition":"Other malignant neoplasms (remainder of C00-C97)"},{"ICD10":"D00-D48","definition":"Non-malignant neoplasms (benign and uncertain)"},{"ICD10":"D50-D89","definition":"Diseases of the blood and blood-forming organs and certain disorders involving the immune mechanism"},{"ICD10":"E","definition":"Endocrine, nutritional and metabolic diseases (E00-E90)"},{"ICD10":"E10-E14","definition":"Diabetes mellitus"},{"ICD10":"E_OTH","definition":"Other endocrine, nutritional and metabolic diseases (remainder of E00-E90)"},{"ICD10":"F","definition":"Mental and behavioural disorders (F00-F99)"},{"ICD10":"F01_F03","definition":"Dementia"},{"ICD10":"F10","definition":"Mental and behavioural disorders due to use of alcohol"},{"ICD10":"TOXICO","definition":"Drug dependence, toxicomania (F11-F16, F18-F19)"},{"ICD10":"F_OTH","definition":"Other mental and behavioural disorders (remainder of F00-F99)"},{"ICD10":"G_H","definition":"Diseases of the nervous system and the sense organs (G00-H95)"},{"ICD10":"G20","definition":"Parkinson disease"},{"ICD10":"G30","definition":"Alzheimer disease"},{"ICD10":"G_H_OTH","definition":"Other diseases of the nervous system and the sense organs (remainder of G00-H95)"},{"ICD10":"I","definition":"Diseases of the circulatory system (I00-I99)"},{"ICD10":"I20-I25","definition":"Ischaemic heart diseases"},{"ICD10":"I21_I22","definition":"Acute myocardial infarction including subsequent myocardial infarction"},{"ICD10":"I20_I23-I25","definition":"Other ischaemic heart diseases"},{"ICD10":"I30-I51","definition":"Other heart diseases"},{"ICD10":"I60-I69","definition":"Cerebrovascular diseases"},{"ICD10":"I_OTH","definition":"Other diseases of the circulatory system (remainder of I00-I99)"},{"ICD10":"J","definition":"Diseases of the respiratory system (J00-J99)"},{"ICD10":"J09-J11","definition":"Influenza (including swine flu)"},{"ICD10":"J12-J18","definition":"Pneumonia"},{"ICD10":"J40-J47","definition":"Chronic lower respiratory diseases"},{"ICD10":"J45_J46","definition":"Asthma and status asthmaticus"},{"ICD10":"J40-J44_J47","definition":"Other lower respiratory diseases"},{"ICD10":"J_OTH","definition":"Other diseases of the respiratory system (remainder of J00-J99)"},{"ICD10":"K","definition":"Diseases of the digestive system (K00-K93)"},{"ICD10":"K25-K28","definition":"Ulcer of stomach, duodenum and jejunum"},{"ICD10":"K70_K73_K74","definition":"Chronic liver disease"},{"ICD10":"K_OTH","definition":"Other diseases of the digestive system (remainder of K00-K93)"},{"ICD10":"L","definition":"Diseases of the skin and subcutaneous tissue (L00-L99)"},{"ICD10":"M","definition":"Diseases of the musculoskeletal system and connective tissue (M00-M99)"},{"ICD10":"RHEUM_ARTHRO","definition":"Rheumatoid arthritis and arthrosis (M05-M06,M15-M19)"},{"ICD10":"M_OTH","definition":"Other diseases of the musculoskeletal system and connective tissue (remainder of M00-M99)"},{"ICD10":"N","definition":"Diseases of the genitourinary system (N00-N99)"},{"ICD10":"N00-N29","definition":"Diseases of kidney and ureter"},{"ICD10":"N_OTH","definition":"Other diseases of the genitourinary system (remainder of N00-N99)"},{"ICD10":"O","definition":"Pregnancy, childbirth and the puerperium (O00-O99)"},{"ICD10":"P","definition":"Certain conditions originating in the perinatal period (P00-P96)"},{"ICD10":"Q","definition":"Congenital malformations, deformations and chromosomal abnormalities (Q00-Q99)"},{"ICD10":"R","definition":"Rheumatoid arthritis and arthrosis (M05-M06,M15-M19)"},{"ICD10":"R95","definition":"Sudden infant death syndrome"},{"ICD10":"R96-R99","definition":"Ill-defined and unknown causes of mortality"},{"ICD10":"R_OTH","definition":"Other symptoms, signs and abnormal clinical and laboratory findings (remainder of R00-R99)"},{"ICD10":"V01-Y89","definition":"External causes of morbidity and mortality (V01-Y89)"},{"ICD10":"ACC","definition":"Accidents (V01-X59, Y85, Y86)"},{"ICD10":"V_Y85","definition":"Transport accidents (V01-V99, Y85)"},{"ICD10":"W00-W19","definition":"Falls"},{"ICD10":"W65-W74","definition":"Accidental drowning and submersion"},{"ICD10":"X40-X49","definition":"Accidental poisoning by and exposure to noxious substances"},{"ICD10":"ACC_OTH","definition":"Other accidents (W20-W64, W75-X39, X50-X59, Y86)"},{"ICD10":"X60-X84_Y870","definition":"Intentional self-harm"},{"ICD10":"X85-Y09_Y871","definition":"Assault"},{"ICD10":"Y10-Y34_Y872","definition":"Event of undetermined intent"},{"ICD10":"V01-Y89_OTH","definition":"Other external causes of morbidity and mortality (remainder of V01-Y89)"}]';
 var tjsmenu='{"A":["<li href=\\"0\\" data-cid=\\"0\\"><a href=\\"#\\" data-mid=\\"0\\">A-R_V-Y&nbsp;All causes of death (A00-Y89) excluding S00-T98<\/a><\/li>","<li href=\\"1\\" data-cid=\\"1\\"><a href=\\"#\\" data-mid=\\"0\\">A_B&nbsp;Certain infectious and parasitic diseases (A00-B99)<\/a><\/li>","<li href=\\"2\\" data-cid=\\"2\\"><a href=\\"#\\" data-mid=\\"0\\">A15-A19_B90&nbsp;Tuberculosis<\/a><\/li>","<li href=\\"5\\" data-cid=\\"5\\"><a href=\\"#\\" data-mid=\\"0\\">A_B_OTH&nbsp;Other infectious and parasitic diseases (remainder of A00-B99)<\/a><\/li>","<li href=\\"77\\" data-cid=\\"77\\"><a href=\\"#\\" data-mid=\\"0\\">ACC&nbsp;Accidents (V01-X59, Y85, Y86)<\/a><\/li>","<li href=\\"82\\" data-cid=\\"82\\"><a href=\\"#\\" data-mid=\\"0\\">ACC_OTH&nbsp;Other accidents (W20-W64, W75-X39, X50-X59, Y86)<\/a><\/li>"],"B":["<li href=\\"3\\" data-cid=\\"3\\"><a href=\\"#\\" data-mid=\\"0\\">B15-B19_B942&nbsp;Viral hepatitis and sequelae of viral hepatitis<\/a><\/li>","<li href=\\"4\\" data-cid=\\"4\\"><a href=\\"#\\" data-mid=\\"0\\">B20-B24&nbsp;Human immunodeficiency virus [HIV] disease<\/a><\/li>"],"C":["<li href=\\"6\\" data-cid=\\"6\\"><a href=\\"#\\" data-mid=\\"0\\">C00-D48&nbsp;Neoplasms<\/a><\/li>","<li href=\\"7\\" data-cid=\\"7\\"><a href=\\"#\\" data-mid=\\"0\\">C&nbsp;Neoplasms<\/a><\/li>","<li href=\\"8\\" data-cid=\\"8\\"><a href=\\"#\\" data-mid=\\"0\\">C00-C14&nbsp;Malignant neoplasm of lip, oral cavity, pharynx<\/a><\/li>","<li href=\\"9\\" data-cid=\\"9\\"><a href=\\"#\\" data-mid=\\"0\\">C15&nbsp;Malignant neoplasm of oesophagus<\/a><\/li>","<li href=\\"10\\" data-cid=\\"10\\"><a href=\\"#\\" data-mid=\\"0\\">C16&nbsp;Malignant neoplasm of stomach<\/a><\/li>","<li href=\\"11\\" data-cid=\\"11\\"><a href=\\"#\\" data-mid=\\"0\\">C18-C21&nbsp;Malignant neoplasm of colon, rectosigmoid junction, rectum, anus and anal canal<\/a><\/li>","<li href=\\"12\\" data-cid=\\"12\\"><a href=\\"#\\" data-mid=\\"0\\">C22&nbsp;Malignant neoplasm of liver and intrahepatic bile ducts<\/a><\/li>","<li href=\\"13\\" data-cid=\\"13\\"><a href=\\"#\\" data-mid=\\"0\\">C25&nbsp;Malignant neoplasm of pancreas<\/a><\/li>","<li href=\\"14\\" data-cid=\\"14\\"><a href=\\"#\\" data-mid=\\"0\\">C32&nbsp;Malignant neoplasm of larynx<\/a><\/li>","<li href=\\"15\\" data-cid=\\"15\\"><a href=\\"#\\" data-mid=\\"0\\">C33_C34&nbsp;Malignant neoplasm of trachea, bronchus and lung<\/a><\/li>","<li href=\\"16\\" data-cid=\\"16\\"><a href=\\"#\\" data-mid=\\"0\\">C43&nbsp;Malignant melanoma of skin<\/a><\/li>","<li href=\\"17\\" data-cid=\\"17\\"><a href=\\"#\\" data-mid=\\"0\\">C50&nbsp;Malignant neoplasm of breast<\/a><\/li>","<li href=\\"18\\" data-cid=\\"18\\"><a href=\\"#\\" data-mid=\\"0\\">C53&nbsp;Malignant neoplasm of cervix uteri<\/a><\/li>","<li href=\\"19\\" data-cid=\\"19\\"><a href=\\"#\\" data-mid=\\"0\\">C54_C55&nbsp;Malignant neoplasm of other parts of uterus<\/a><\/li>","<li href=\\"20\\" data-cid=\\"20\\"><a href=\\"#\\" data-mid=\\"0\\">C56&nbsp;Malignant neoplasm of ovary<\/a><\/li>","<li href=\\"21\\" data-cid=\\"21\\"><a href=\\"#\\" data-mid=\\"0\\">C61&nbsp;Malignant neoplasm of prostate<\/a><\/li>","<li href=\\"22\\" data-cid=\\"22\\"><a href=\\"#\\" data-mid=\\"0\\">C64&nbsp;Malignant neoplasm of kidney, except renal pelvis<\/a><\/li>","<li href=\\"23\\" data-cid=\\"23\\"><a href=\\"#\\" data-mid=\\"0\\">C67&nbsp;Malignant neoplasm of bladder<\/a><\/li>","<li href=\\"24\\" data-cid=\\"24\\"><a href=\\"#\\" data-mid=\\"0\\">C70-C72&nbsp;Malignant neoplasm of brain and central nervous system<\/a><\/li>","<li href=\\"25\\" data-cid=\\"25\\"><a href=\\"#\\" data-mid=\\"0\\">C73&nbsp;Malignant neoplasm of thyroid gland<\/a><\/li>","<li href=\\"26\\" data-cid=\\"26\\"><a href=\\"#\\" data-mid=\\"0\\">C81-C85&nbsp;Hodgkin disease and lymphomas<\/a><\/li>","<li href=\\"27\\" data-cid=\\"27\\"><a href=\\"#\\" data-mid=\\"0\\">C91-C95&nbsp;Leukaemia<\/a><\/li>","<li href=\\"28\\" data-cid=\\"28\\"><a href=\\"#\\" data-mid=\\"0\\">C88_C90_C96&nbsp;Other malignant neoplasm of lymphoid, haematopoietic and related tissue<\/a><\/li>","<li href=\\"29\\" data-cid=\\"29\\"><a href=\\"#\\" data-mid=\\"0\\">C_OTH&nbsp;Other malignant neoplasms (remainder of C00-C97)<\/a><\/li>"],"D":["<li href=\\"30\\" data-cid=\\"30\\"><a href=\\"#\\" data-mid=\\"0\\">D00-D48&nbsp;Non-malignant neoplasms (benign and uncertain)<\/a><\/li>","<li href=\\"31\\" data-cid=\\"31\\"><a href=\\"#\\" data-mid=\\"0\\">D50-D89&nbsp;Diseases of the blood and blood-forming organs and certain disorders involving the immune mechanism<\/a><\/li>"],"E":["<li href=\\"32\\" data-cid=\\"32\\"><a href=\\"#\\" data-mid=\\"0\\">E&nbsp;Endocrine, nutritional and metabolic diseases (E00-E90)<\/a><\/li>","<li href=\\"33\\" data-cid=\\"33\\"><a href=\\"#\\" data-mid=\\"0\\">E10-E14&nbsp;Diabetes mellitus<\/a><\/li>","<li href=\\"34\\" data-cid=\\"34\\"><a href=\\"#\\" data-mid=\\"0\\">E_OTH&nbsp;Other endocrine, nutritional and metabolic diseases (remainder of E00-E90)<\/a><\/li>"],"F":["<li href=\\"35\\" data-cid=\\"35\\"><a href=\\"#\\" data-mid=\\"0\\">F&nbsp;Mental and behavioural disorders (F00-F99)<\/a><\/li>","<li href=\\"36\\" data-cid=\\"36\\"><a href=\\"#\\" data-mid=\\"0\\">F01_F03&nbsp;Dementia<\/a><\/li>","<li href=\\"37\\" data-cid=\\"37\\"><a href=\\"#\\" data-mid=\\"0\\">F10&nbsp;Mental and behavioural disorders due to use of alcohol<\/a><\/li>","<li href=\\"39\\" data-cid=\\"39\\"><a href=\\"#\\" data-mid=\\"0\\">F_OTH&nbsp;Other mental and behavioural disorders (remainder of F00-F99)<\/a><\/li>"],"T":["<li href=\\"38\\" data-cid=\\"38\\"><a href=\\"#\\" data-mid=\\"0\\">TOXICO&nbsp;Drug dependence, toxicomania (F11-F16, F18-F19)<\/a><\/li>"],"G":["<li href=\\"40\\" data-cid=\\"40\\"><a href=\\"#\\" data-mid=\\"0\\">G_H&nbsp;Diseases of the nervous system and the sense organs (G00-H95)<\/a><\/li>","<li href=\\"41\\" data-cid=\\"41\\"><a href=\\"#\\" data-mid=\\"0\\">G20&nbsp;Parkinson disease<\/a><\/li>","<li href=\\"42\\" data-cid=\\"42\\"><a href=\\"#\\" data-mid=\\"0\\">G30&nbsp;Alzheimer disease<\/a><\/li>","<li href=\\"43\\" data-cid=\\"43\\"><a href=\\"#\\" data-mid=\\"0\\">G_H_OTH&nbsp;Other diseases of the nervous system and the sense organs (remainder of G00-H95)<\/a><\/li>"],"I":["<li href=\\"44\\" data-cid=\\"44\\"><a href=\\"#\\" data-mid=\\"0\\">I&nbsp;Diseases of the circulatory system (I00-I99)<\/a><\/li>","<li href=\\"45\\" data-cid=\\"45\\"><a href=\\"#\\" data-mid=\\"0\\">I20-I25&nbsp;Ischaemic heart diseases<\/a><\/li>","<li href=\\"46\\" data-cid=\\"46\\"><a href=\\"#\\" data-mid=\\"0\\">I21_I22&nbsp;Acute myocardial infarction including subsequent myocardial infarction<\/a><\/li>","<li href=\\"47\\" data-cid=\\"47\\"><a href=\\"#\\" data-mid=\\"0\\">I20_I23-I25&nbsp;Other ischaemic heart diseases<\/a><\/li>","<li href=\\"48\\" data-cid=\\"48\\"><a href=\\"#\\" data-mid=\\"0\\">I30-I51&nbsp;Other heart diseases<\/a><\/li>","<li href=\\"49\\" data-cid=\\"49\\"><a href=\\"#\\" data-mid=\\"0\\">I60-I69&nbsp;Cerebrovascular diseases<\/a><\/li>","<li href=\\"50\\" data-cid=\\"50\\"><a href=\\"#\\" data-mid=\\"0\\">I_OTH&nbsp;Other diseases of the circulatory system (remainder of I00-I99)<\/a><\/li>"],"J":["<li href=\\"51\\" data-cid=\\"51\\"><a href=\\"#\\" data-mid=\\"0\\">J&nbsp;Diseases of the respiratory system (J00-J99)<\/a><\/li>","<li href=\\"52\\" data-cid=\\"52\\"><a href=\\"#\\" data-mid=\\"0\\">J09-J11&nbsp;Influenza (including swine flu)<\/a><\/li>","<li href=\\"53\\" data-cid=\\"53\\"><a href=\\"#\\" data-mid=\\"0\\">J12-J18&nbsp;Pneumonia<\/a><\/li>","<li href=\\"54\\" data-cid=\\"54\\"><a href=\\"#\\" data-mid=\\"0\\">J40-J47&nbsp;Chronic lower respiratory diseases<\/a><\/li>","<li href=\\"55\\" data-cid=\\"55\\"><a href=\\"#\\" data-mid=\\"0\\">J45_J46&nbsp;Asthma and status asthmaticus<\/a><\/li>","<li href=\\"56\\" data-cid=\\"56\\"><a href=\\"#\\" data-mid=\\"0\\">J40-J44_J47&nbsp;Other lower respiratory diseases<\/a><\/li>","<li href=\\"57\\" data-cid=\\"57\\"><a href=\\"#\\" data-mid=\\"0\\">J_OTH&nbsp;Other diseases of the respiratory system (remainder of J00-J99)<\/a><\/li>"],"K":["<li href=\\"58\\" data-cid=\\"58\\"><a href=\\"#\\" data-mid=\\"0\\">K&nbsp;Diseases of the digestive system (K00-K93)<\/a><\/li>","<li href=\\"59\\" data-cid=\\"59\\"><a href=\\"#\\" data-mid=\\"0\\">K25-K28&nbsp;Ulcer of stomach, duodenum and jejunum<\/a><\/li>","<li href=\\"60\\" data-cid=\\"60\\"><a href=\\"#\\" data-mid=\\"0\\">K70_K73_K74&nbsp;Chronic liver disease<\/a><\/li>","<li href=\\"61\\" data-cid=\\"61\\"><a href=\\"#\\" data-mid=\\"0\\">K_OTH&nbsp;Other diseases of the digestive system (remainder of K00-K93)<\/a><\/li>"],"L":["<li href=\\"62\\" data-cid=\\"62\\"><a href=\\"#\\" data-mid=\\"0\\">L&nbsp;Diseases of the skin and subcutaneous tissue (L00-L99)<\/a><\/li>"],"M":["<li href=\\"63\\" data-cid=\\"63\\"><a href=\\"#\\" data-mid=\\"0\\">M&nbsp;Diseases of the musculoskeletal system and connective tissue (M00-M99)<\/a><\/li>","<li href=\\"65\\" data-cid=\\"65\\"><a href=\\"#\\" data-mid=\\"0\\">M_OTH&nbsp;Other diseases of the musculoskeletal system and connective tissue (remainder of M00-M99)<\/a><\/li>"],"R":["<li href=\\"64\\" data-cid=\\"64\\"><a href=\\"#\\" data-mid=\\"0\\">RHEUM_ARTHRO&nbsp;Rheumatoid arthritis and arthrosis (M05-M06,M15-M19)<\/a><\/li>","<li href=\\"72\\" data-cid=\\"72\\"><a href=\\"#\\" data-mid=\\"0\\">R&nbsp;Rheumatoid arthritis and arthrosis (M05-M06,M15-M19)<\/a><\/li>","<li href=\\"73\\" data-cid=\\"73\\"><a href=\\"#\\" data-mid=\\"0\\">R95&nbsp;Sudden infant death syndrome<\/a><\/li>","<li href=\\"74\\" data-cid=\\"74\\"><a href=\\"#\\" data-mid=\\"0\\">R96-R99&nbsp;Ill-defined and unknown causes of mortality<\/a><\/li>","<li href=\\"75\\" data-cid=\\"75\\"><a href=\\"#\\" data-mid=\\"0\\">R_OTH&nbsp;Other symptoms, signs and abnormal clinical and laboratory findings (remainder of R00-R99)<\/a><\/li>"],"N":["<li href=\\"66\\" data-cid=\\"66\\"><a href=\\"#\\" data-mid=\\"0\\">N&nbsp;Diseases of the genitourinary system (N00-N99)<\/a><\/li>","<li href=\\"67\\" data-cid=\\"67\\"><a href=\\"#\\" data-mid=\\"0\\">N00-N29&nbsp;Diseases of kidney and ureter<\/a><\/li>","<li href=\\"68\\" data-cid=\\"68\\"><a href=\\"#\\" data-mid=\\"0\\">N_OTH&nbsp;Other diseases of the genitourinary system (remainder of N00-N99)<\/a><\/li>"],"O":["<li href=\\"69\\" data-cid=\\"69\\"><a href=\\"#\\" data-mid=\\"0\\">O&nbsp;Pregnancy, childbirth and the puerperium (O00-O99)<\/a><\/li>"],"P":["<li href=\\"70\\" data-cid=\\"70\\"><a href=\\"#\\" data-mid=\\"0\\">P&nbsp;Certain conditions originating in the perinatal period (P00-P96)<\/a><\/li>"],"Q":["<li href=\\"71\\" data-cid=\\"71\\"><a href=\\"#\\" data-mid=\\"0\\">Q&nbsp;Congenital malformations, deformations and chromosomal abnormalities (Q00-Q99)<\/a><\/li>"],"V":["<li href=\\"76\\" data-cid=\\"76\\"><a href=\\"#\\" data-mid=\\"0\\">V01-Y89&nbsp;External causes of morbidity and mortality (V01-Y89)<\/a><\/li>","<li href=\\"78\\" data-cid=\\"78\\"><a href=\\"#\\" data-mid=\\"0\\">V_Y85&nbsp;Transport accidents (V01-V99, Y85)<\/a><\/li>","<li href=\\"86\\" data-cid=\\"86\\"><a href=\\"#\\" data-mid=\\"0\\">V01-Y89_OTH&nbsp;Other external causes of morbidity and mortality (remainder of V01-Y89)<\/a><\/li>"],"W":["<li href=\\"79\\" data-cid=\\"79\\"><a href=\\"#\\" data-mid=\\"0\\">W00-W19&nbsp;Falls<\/a><\/li>","<li href=\\"80\\" data-cid=\\"80\\"><a href=\\"#\\" data-mid=\\"0\\">W65-W74&nbsp;Accidental drowning and submersion<\/a><\/li>"],"X":["<li href=\\"81\\" data-cid=\\"81\\"><a href=\\"#\\" data-mid=\\"0\\">X40-X49&nbsp;Accidental poisoning by and exposure to noxious substances<\/a><\/li>","<li href=\\"83\\" data-cid=\\"83\\"><a href=\\"#\\" data-mid=\\"0\\">X60-X84_Y870&nbsp;Intentional self-harm<\/a><\/li>","<li href=\\"84\\" data-cid=\\"84\\"><a href=\\"#\\" data-mid=\\"0\\">X85-Y09_Y871&nbsp;Assault<\/a><\/li>"],"Y":["<li href=\\"85\\" data-cid=\\"85\\"><a href=\\"#\\" data-mid=\\"0\\">Y10-Y34_Y872&nbsp;Event of undetermined intent<\/a><\/li>"]}';
 
@@ -39,18 +41,18 @@ stage.initStageInfoWindow=function()
 	{
 		var div = $(this.div_)[0];
 		div.style.position = 'absolute';
-		
+
 		this.div_ = div;
-		
+
 		var panes = this.getPanes();
 		panes.overlayLayer.appendChild(div);
 	}
-	
+
 	stage.stageinfo.prototype.hide = function()
 	{
 		$(this.div_).hide();
 	}
-	
+
 	stage.stageinfo.prototype.show = function()
 	{
 		$(this.div_).show();
@@ -61,7 +63,7 @@ stage.initStageInfoWindow=function()
 		this.point_=pos;
 		this.draw();
 	}
-	
+
 	stage.stageinfo.prototype.setText=function(text)
 	{
 		$(this.div_).html(text);
@@ -116,7 +118,7 @@ stage.select_feature=function(id,add)
 	stage.set_tile_cache('selection_updated','false');
 	var ids=selectedGroup.ids;
 	if (ids===undefined) ids=selectedGroup.ids=[];
-	
+
 	var op=0;
 	if (add)
 	{
@@ -127,26 +129,26 @@ stage.select_feature=function(id,add)
 	{
 		delete ids[id];
 	}
-	
+
 	stage.drawChart(ids);
-	
+
 	var zoom=map.getZoom();
 	var a=stage.the_overlay.cache[zoom];
 	if (a===undefined) return;
 	var bounds=stage.getMapBounds();
-	
+
 	var bounds=stage.getMapBounds(zoom);
 	var minX = bounds[0];
 	var minY = bounds[1];
     var maxX = bounds[2];
 	var maxY = bounds[3];
-	
+
 	id=parseInt(id);
 	var rgb_id=intToRGB(id);
 	var cx0=rgb_id[0];
 	var cx1=rgb_id[1];
 	var cx2=rgb_id[2];
-    
+
 	for (var x=minX;x<=maxX;++x)
 	{
 		if (a[x]!==undefined)
@@ -175,9 +177,9 @@ stage.select_feature=function(id,add)
 						ctx=overlay_canvas.getContext('2d');
 						imageData = ctx.getImageData(0,0,256,256);
 					}
-					
+
 					var pixels=imageData.data;
-					
+
 					for (var i = 0; i < N; i=i+4)
 					{
 					   if (data[i+3]==255 && data[i]==cx0 && data[i+1]==cx1 && data[i+2]==cx2)
@@ -199,13 +201,13 @@ stage.clear_selection=function()
 	var a=stage.the_overlay.cache[zoom];
 	if (a===undefined) return;
 	var bounds=stage.getMapBounds();
-	
+
 	var bounds=stage.getMapBounds(zoom);
 	var minX = bounds[0];
 	var minY = bounds[1];
 	var maxX = bounds[2];
 	var maxY = bounds[3];
-    
+
 	for (var x=minX;x<=maxX;++x)
 	{
 		if (a[x]!==undefined)
@@ -220,7 +222,7 @@ stage.clear_selection=function()
 				}
 			}
 		}
-	}			
+	}
 }
 
 stage.selection2div=function(tile)
@@ -229,10 +231,10 @@ stage.selection2div=function(tile)
 	if (stage.groups[stage.selectedGroupInx].levelDatum!==stage.selectedLevelDatum) return;
 	if (tile.selection_updated===undefined) tile.selection_updated=false;
 	if (tile.selection_updated==true) return;
-	
+
 	var ids=stage.groups[stage.selectedGroupInx].ids;
 	if (ids.length==0) return;
-	
+
 	if (tile!==undefined)
 	{
 		var data=tile.f;
@@ -247,12 +249,12 @@ stage.selection2div=function(tile)
 			overlay_canvas.style.position='absolute';
 			tile.d.children[0].style.position='absolute';
 		}
-		
+
 		ctx=overlay_canvas.getContext('2d');
 		imageData = ctx.createImageData(256, 256);
-		
+
 		var pixels=imageData.data;
-		
+
 		for (var i = 0; i < N; i=i+4)
 		{
 			var fi=rgbToInt(data[i],data[i+1],data[i+2]);
@@ -289,9 +291,9 @@ stage.select_features=function(ids)
 		stage.drawChart(ids);
 		return;
 	}
-	
+
 	var selectedGroup=stage.groups[stage.selectedGroupInx];
-	
+
 	selectedGroup.updated=false;
 	stage.set_tile_cache('selection_updated','false');
 	stage.drawChart(ids);
@@ -299,13 +301,13 @@ stage.select_features=function(ids)
 	var a=stage.the_overlay.cache[zoom];
 	if (a===undefined) return;
 	var bounds=stage.getMapBounds();
-	
+
 	var bounds=stage.getMapBounds(zoom);
 	var minX = bounds[0];
 	var minY = bounds[1];
 	var maxX = bounds[2];
 	var maxY = bounds[3];
-    
+
 	for (var x=minX;x<=maxX;++x)
 	{
 		if (a[x]!==undefined)
@@ -327,12 +329,12 @@ stage.select_features=function(ids)
 						overlay_canvas.style.position='absolute';
 						tile.d.children[0].style.position='absolute';
 					}
-					
+
 					ctx=overlay_canvas.getContext('2d');
 					imageData = ctx.createImageData(256, 256);
-					
+
 					var pixels=imageData.data;
-					
+
 					for (var i = 0; i < N; i=i+4)
 					{
 						var fi=rgbToInt(data[i],data[i+1],data[i+2]);
@@ -355,7 +357,7 @@ stage.data_tile=function (ctx,features)
 	var N=256*256*4
 	var pixels=imageData.data;
 	var lngth=stage.cba.length;
-	
+
 	for (var i = 0; i < N; i=i+4)
 	{
 		if (features[i]>250 && features[i+1]==0) { pixels[i]=84;pixels[i+1]=84;pixels[i+2]=84;pixels[i+3]=255;}
@@ -379,7 +381,7 @@ stage.data_tile=function (ctx,features)
 						ki++;
 					}
 				}
-				
+
 				if (color==null)
 				{
 					var sv=stage.specialValues[value];
@@ -402,7 +404,7 @@ stage.data_tile=function (ctx,features)
 						}
 					}
 				}
-				
+
 				if (color!=null){ pixels[i]=color.r;pixels[i+1]=color.g;pixels[i+2]=color.b;pixels[i+3]=255;}
 			}
 		}
@@ -412,7 +414,7 @@ stage.data_tile=function (ctx,features)
 
 stage.export2png=function()
 {
-	
+
 	if (stage.png_settings===undefined)
 	{
 		$.get(stage.host+"index.php?r=site/pngSettings",function(data)
@@ -442,45 +444,45 @@ LevelMapType.prototype.export2png=function(o)
 	var legend_s_text='Vrednost za Slovenijo: '+$('#slo').text();
 	var legend_n_text=$('#variable-comments').text();
 	var footnote_text=stage.png_settings.footnote;
-	
+
 	var bounds=stage.getMapBounds(map.getZoom());
 	var minX = bounds[0];
 	var minY = bounds[1];
 	var maxX = bounds[2];
 	var maxY = bounds[3]+1;
-	
+
 	var h=(maxY-minY)*256+parseInt(stage.png_settings.phh)+parseInt(stage.png_settings.pfh)+1;
 	var w=(maxX-minX)*256+parseInt(stage.png_settings.plw);
 	var lph=(maxY-minY)*256;
-	
+
 	var canvas = document.createElement('canvas');
 	canvas.width=w;
 	canvas.height=h;
-	
+
 	var head=document.createElement('canvas');
 	head.width=w;
 	head.height=parseInt(stage.png_settings.phh);
-	
+
 	var map_canvas=document.createElement('canvas');
 	map_canvas.width=256*(maxX-minX);
 	map_canvas.height=256*(maxY-minY);
-	
+
 	var left_pane=document.createElement('canvas');
 	left_pane.width=parseInt(stage.png_settings.plw);
 	left_pane.height=lph;
-	
+
 	var image=document.createElement('canvas');
 	image.width=left_pane.width;
 	image.height=lph;
-	
+
 	var legend=document.createElement('canvas');
 	legend.width=parseInt(stage.png_settings.plw);
 	legend.height=h;
-	
+
 	var footer=document.createElement('canvas');
 	footer.width=w;
 	footer.height=parseInt(stage.png_settings.pfh);
-	
+
 	var ctx = canvas.getContext("2d");
 	var htx=head.getContext("2d");
 	var ltx=left_pane.getContext("2d");
@@ -488,15 +490,15 @@ LevelMapType.prototype.export2png=function(o)
 	var itx=image.getContext("2d");
 	var letx=legend.getContext("2d");
 	var ftx=footer.getContext("2d");
-	
+
 	ctx.fillStyle="white";
 	ctx.fillRect(0,0,w,h);
-	
+
 	htx.fillStyle=stage.png_settings.phbc;
 	htx.fillRect(0,0,head.width,head.height);
 	htx.strokeStyle = stage.png_settings.pbc;
 	htx.strokeRect(0,0,head.width,head.height);
-	
+
 	ltx.fillStyle=stage.png_settings.plbc;
 	ltx.fillRect(0,0,left_pane.width,left_pane.height);
 	ltx.strokeStyle=stage.png_settings.pbc;
@@ -506,18 +508,18 @@ LevelMapType.prototype.export2png=function(o)
 	ltx.moveTo(left_pane.width, 0);
 	ltx.lineTo(left_pane.width,left_pane.height);
 	ltx.stroke();
-	
+
 	mtx.strokeStyle=stage.png_settings.pbc;
 	mtx.beginPath();
 	mtx.moveTo(map_canvas.width, 0);
 	mtx.lineTo(map_canvas.width,map_canvas.height);
 	mtx.stroke();
-	
+
 	ftx.fillStyle=stage.png_settings.pfbc;
 	ftx.fillRect(0,0,footer.width,footer.height);
 	ftx.strokeStyle=stage.png_settings.pbc;
 	ftx.strokeRect(0,0,footer.width,footer.height);
-	
+
 	var legend_height=stage.drawLegend(letx);
 	stage.drawText(htx,stage.png_settings.phtc,stage.png_settings.phf,stage.png_settings.pha,'top',head_text,parseInt(stage.png_settings.phtx),parseInt(stage.png_settings.phty));
 	stage.drawText(ltx,stage.png_settings.plstc,stage.png_settings.plsf,stage.png_settings.plsa,'top',legend_s_text,parseInt(stage.png_settings.plstx),parseInt(stage.png_settings.plsty)+parseInt(legend_height)+parseInt(stage.png_settings.pllty)+100);
@@ -548,7 +550,7 @@ stage.drawImage=function(context,onFinished)
 stage.drawMap=function(context,minX,minY,maxX,maxY,a)
 {
 	if (a===undefined) return;
-	
+
 	for (var x=minX;x<=maxX;++x)
 	{
 		if (a[x]!==undefined)
@@ -573,7 +575,7 @@ stage.drawLegend=function(context)
 	var ysize=lineHeight*$('#legend .legendText').length;
 	var y=0;
 	var i=0;
-	
+
 	$('#legend .legendText').each(function()
 	{
 	      var color=stage.colors[i];
@@ -585,7 +587,7 @@ stage.drawLegend=function(context)
 	      y=y+lineHeight;
 	      i++;
 	});
-	
+
 	return ysize;
 }
 
@@ -597,15 +599,15 @@ stage.drawText=function(context,fillStyle,font,textAlign,textBaseline,text,x,y)
 	context.textBaseline = textBaseline;
 	context.fillText(text,x,y);
 }
-		
-		
+
+
 stage.wrapText=function(context,fillStyle,font,textAlign,textBaseline,text,x,y,maxWidth)
 {
 	var words = text.split(' ');
 	var line = '';
 	var px=font.match(/\d+(px|%)?/);
 	var lineHeight = parseInt((px[0]).replace('px',''));
-	
+
 	context.fillStyle=fillStyle;
 	context.font = font;
 	context.textAlign = textAlign;
@@ -634,27 +636,27 @@ stage.getMapBounds=function(zoom)
 {
 	var bounds=map.getBounds();
 	var proj=map.getProjection();
-	
+
 	var sw=fromLatLngToTile(proj,zoom,bounds.getSouthWest());
 	var ne=fromLatLngToTile(proj,zoom,bounds.getNorthEast());
-	
+
     return [sw.x,ne.y,ne.x,sw.y];
 }
 
 LevelMapType.prototype.setOpacity=function(o)
 {
 	this.opacity=o;
-	
+
 	var zoom=map.getZoom();
 	var a=this.cache[zoom];
 	if (a===undefined) return;
-	
+
 	var bounds=stage.getMapBounds(zoom);
 	var minX = bounds[0];
 	var minY = bounds[1];
     var maxX = bounds[2];
 	var maxY = bounds[3];
-    
+
 	for (var x=minX;x<=maxX;++x)
 	{
 		if (a[x]!==undefined)
@@ -677,17 +679,17 @@ LevelMapType.prototype.getTile = function(coord, zoom, ownerDocument) {
 		if (stage.drawingManager.getMap()!= null) stage.selection2div(cache);
 		return cache.d;
 	}
-	
+
 	var div=ownerDocument.createElement('div');
 	div.style.opacity=this.opacity;
-	
+
 	div.style.width = this.tileSize.width + 'px';
 	div.style.height = this.tileSize.height + 'px';
 
 	var canvas = ownerDocument.createElement('canvas');
 	canvas.width=canvas.height=256;
 	var ctx=canvas.getContext('2d');
-	
+
 	var img = new Image;
 	if (cache===undefined)
 	{
@@ -710,7 +712,7 @@ LevelMapType.prototype.getTile = function(coord, zoom, ownerDocument) {
 		cache.d=div;
 		if (stage.drawingManager.getMap()!= null) stage.selection2div(cache);
 	}
-	
+
 	cache.r=false;
 	return div;
 };
@@ -732,7 +734,7 @@ stage.onZoomChanged=function()
 	if (stage.auto_zoom)
 	{
 		var azooms=stage.azooms;
-		
+
 		for (var lid in azooms)
 		{
 			var zd=azooms[lid];
@@ -766,7 +768,7 @@ function codeAddress() {
 		content: results[0].formatted_address,
 		position: results[0].geometry.location,
 	  });
-	  infoWindow.open(map); 
+	  infoWindow.open(map);
     } else {
       alert('Geocode was not successful for the following reason: ' + status);
     }
@@ -801,17 +803,17 @@ function initMap() {
 	CustomMapType.prototype.getTileUrl=function(tile,zoom){
 		return 'http://opencache.statkart.no/gatekeeper/gk/gk.open_wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&LAYER=elf_basemap&STYLE=default&FORMAT=image/png&TILEMATRIXSET=EPSG:3857&TILEMATRIX=EPSG:3857:'+zoom+'&TILEROW='+tile.y+'&TILECOL='+tile.x;
 	};
-	
+
 	var mname='elf_basemap';
 	var coordinateMapType = new google.maps.ImageMapType(new CustomMapType(mname,mname));
 	map.mapTypes.set(mname, coordinateMapType);
   //
   /////////////////
   map.setMapTypeId(google.maps.MapTypeId.ROADMAP);
-  
+
   stage.initStageInfoWindow();
   stage.getDefaultValues();
-  
+
   var options={
       fillColor: '#ffff00',
       fillOpacity: 0.7,
@@ -840,21 +842,21 @@ function initMap() {
 		icon: 'http://maps.google.com/mapfiles/ms/icons/yellow-dot.png'
 	},
   });
-  
+
   stage.radius_infowindow = new google.maps.InfoWindow();
-  
+
   google.maps.event.addListener(stage.drawingManager, 'overlaycomplete', stage.onOverlayComplete);
   google.maps.event.addListener(stage.drawingManager, 'markercomplete', stage.onMarkerComplete);
   google.maps.event.addListener(stage.drawingManager, 'polygoncomplete', stage.onPolygonComplete);
   google.maps.event.addListener(stage.drawingManager, 'circlecomplete', stage.onCircleComplete);
   google.maps.event.addListener(stage.drawingManager, 'rectanglecomplete', stage.onRectangleComplete);
-  
+
   google.maps.event.addListener(map, 'zoom_changed', stage.onZoomChanged);
   google.maps.event.addListener(map, 'mouseover', stage.onMouseOver);
   google.maps.event.addListener(map, 'mouseout', stage.onMouseOut);
-  
+
   stage.infoWindowTemplate='<div style="background-color:#fffff0;margin-left:10px;margin-top:15px;padding-left:5px;padding-right:5px;-moz-border-radius: 7px;-webkit-border-radius: 7px;border-radius: 7px;border: 1px solid;"></div>';
-  
+
   var q=stage.QueryString;
   if (q.iframe!==undefined && q.iframe==1)
 	{
@@ -879,7 +881,7 @@ function initMap() {
 			stage.iframeClick(a);
 		});
 	}
-  
+
   if (stage.iframe==false)
   {
 	map.enableKeyDragZoom({
@@ -936,14 +938,14 @@ stage.setSelection=function(type,shape)
 	{
 		if (selection.type!='m') selection.setEditable(false);
 	}
-	
+
 	if (shape==null)
 		stage.groups[stage.selectedGroupInx].selection=null;
 	else
 	{
 		stage.groups[stage.selectedGroupInx].selection=shape;
 		if (type!='m') shape.setEditable(true);
-		
+
 		if (type=='c')
 		{
 			stage.radius_infowindow.setPosition(shape.getCenter());
@@ -985,9 +987,9 @@ stage.onRadiusKeyPress=function(event,that,shape)
 		event.preventDefault();
 		return false;
 	}
-	
+
 	if (event.which==13) stage.onShapeChanged(shape);
-	
+
 	return true;
 }
 
@@ -1043,7 +1045,7 @@ stage.onShapeChanged=function(chshape)
 {
 	if (chshape!==undefined && chshape.type=='c' && stage.radius_infowindow.shape==chshape && chshape.visible) $('#radius').val(stage.formatRadius(chshape));
 	if (stage.groups[stage.selectedGroupInx].ga===undefined) return;
-	
+
 	var len=stage.groups[stage.selectedGroupInx].ga.length;
 	var params=[];
 	for (var i=0;i<len;i++)
@@ -1060,14 +1062,14 @@ stage.onShapeChanged=function(chshape)
 				prop={bounds:shape.getBounds().toString()};
 			else if (type=='p')
 				prop={vertices:shape.getPath().getArray().toString()};
-			
+
 			if (!add) prop.sub=1;
 			prop.type=type;
 			prop.table=stage.layerTable;
 			params.push(prop);
 		}
 	}
-	
+
 	$.post(stage.host+"index.php?r=site/delineate",{data:JSON.stringify(params)},function(data)
 	{
 		var ids=jQuery.parseJSON(data);
@@ -1077,10 +1079,10 @@ stage.onShapeChanged=function(chshape)
 		{
 			sids[parseInt(ids[i])]=true;
 		}
-		
+
 		stage.groups[stage.selectedGroupInx].ids=sids;
 		stage.addMarkerSelections();
-		
+
 		stage.select_features(sids);
 		if (chshape!==undefined && chshape.type=='c') $('#submit-radius').hide();
 	});
@@ -1160,28 +1162,28 @@ function borderLayout()
 		north__resizable:			false,	// OVERRIDE the pane-default of 'resizable=true'
 		north__spacing_open:		0,		// no resizer-bar when open (zero height)
 		north__spacing_closed:		20,		// big resizer-bar when open (zero height)
-		
+
 		east__minSize: 300,
 		east__initHidden: true,
-		
+
 		onclose: function(){
 			google.maps.event.trigger(map, 'resize');
 		},
 
 		west__size:	300,
 		west__minSize: 300,
-		
+
 		south__size:	0,
 		south__minSize: 0,
 		south_resizable:false,
 		south__initClosed:	true,
 		south__initHidden:	true,
 		south__spacing_open:		0,
-		
+
 		livePaneResizing: false,
 		stateManagement__enabled: false,
 		showDebugMessages: false,
-		
+
 		ondrag_start: function () {
 			map.controls[0].deactivate();
 			return true; // false = Cancel
@@ -1191,7 +1193,7 @@ function borderLayout()
 			return true; // false = Cancel
 		}
 	});
-	
+
 	stage.level_menu=document.getElementById("level-menu");
 	stage.variable_menu=document.getElementById("variable-menu");
 	$('.ui-layout-west, .ui-layout-center').mouseenter(function(){theLayout.allowOverflow(stage.level_menu);theLayout.allowOverflow(stage.variable_menu)});
@@ -1227,26 +1229,26 @@ stage.init_slider=function(type,i,jqslider)
 {
 	var _min=parseFloat(stage.removeSeparator($('#cb1-'+i).text()));
 	var _max=parseFloat(stage.removeSeparator($('#cb2-'+i).text()));
-	
+
 	if (type==1)
 	{
 		_min=stage.cache[stage.selectedLevelDatum][stage.selectedVariable].stats.min;
 		jqslider.slider("option","min",_min);
 		jqslider.slider("option","max",_max);
-		jqslider.slider("option","value",_max);	
+		jqslider.slider("option","value",_max);
 	}
 	else if (type==2)
 	{
 		_max=stage.cache[stage.selectedLevelDatum][stage.selectedVariable].stats.max;
 		jqslider.slider("option","min",_min);
 		jqslider.slider("option","max",_max);
-		jqslider.slider("option","value",_min);	
+		jqslider.slider("option","value",_min);
 	}
 	else if (type==3)
 	{
 		jqslider.slider("option","min",_min);
 		jqslider.slider("option","max",_max);
-		jqslider.slider("option","values",[_min,_max]);	
+		jqslider.slider("option","values",[_min,_max]);
 	}
 }
 
@@ -1269,7 +1271,7 @@ stage.update_cba=function(i,bval1,type,bval2)
 			stage.cba[2*i-1]+=bval1-stage.cba[2*i];
 			stage.cba[2*i]=bval1;
 		}
-		
+
 		if (bval2!==null && bval2!==undefined)
 		{
 			stage.cba[2*i+2]+=bval2-stage.cba[2*i+1];
@@ -1291,7 +1293,7 @@ stage._addColorDiv=function(i,selColor,cb1,cb2,notShown,k2,g,dc)
 		type: 'text'
 	});
 	colorInput.appendTo(div1);
-	
+
 	var div12=$('<div/>');
 	div12.addClass("span6 legendText");
 	var sliderLimits=[];
@@ -1315,7 +1317,7 @@ stage._addColorDiv=function(i,selColor,cb1,cb2,notShown,k2,g,dc)
 		div12.html("<span class='legendSpan t1' id='cb1-"+i+"'>"+numberWithCommas3(cb1.toFixed(dc))+"</span>"+vec);
 		sliderLimits=[cb1,null];
 	}
-	
+
 	if (!k2)
 	{
 		var div2=$('<div/>');
@@ -1388,12 +1390,12 @@ stage._addColorDiv=function(i,selColor,cb1,cb2,notShown,k2,g,dc)
 					max: sliderLimits[1],
 					values: sliderLimits,
 					slide: function( event, ui ) {
-						
+
 						if (ui.values[0]===stage.cba[2*i+1])
 							ui.values[0]--;
 						else if (ui.values[1]===stage.cba[2*i])
 							ui.values[1]++;
-							
+
 						$(ui.handle).html("<div class='slider-value'>"+ui.values[0]+"&nbsp;-&nbsp;"+ui.values[1]+"</div>");
 					},
 					start: function (event,ui)
@@ -1404,12 +1406,12 @@ stage._addColorDiv=function(i,selColor,cb1,cb2,notShown,k2,g,dc)
 						$(ui.handle).empty();
 						var cb1=$('#cb1-'+i);
 						var cb2=$('#cb2-'+i);
-						
+
 						if (ui.values[0]===stage.cba[2*i+1])
 							ui.values[0]--;
 						else if (ui.values[1]===stage.cba[2*i])
 							ui.values[1]++;
-							
+
 						var dval1=stage.removeSeparator(cb1.text())-ui.values[0];
 						var dval2=stage.removeSeparator(cb2.text())-ui.values[1];
 						cb1.html(numberWithCommas3((ui.values[0]).toFixed(dc)));
@@ -1427,13 +1429,13 @@ stage._addColorDiv=function(i,selColor,cb1,cb2,notShown,k2,g,dc)
 			stage.legend_sliders[i]=_slider;
 		}
 	}
-	
+
 	div1.appendTo(div);
 	div12.appendTo(div);
 	if (!k2 && !stage.iframe) div2.appendTo(div);
-	
+
 	div.appendTo('#legend');
-	
+
 	colorInput.spectrum({showInput: true,
 				disabled:stage.iframe,
 				change: function(color) {
@@ -1442,10 +1444,10 @@ stage._addColorDiv=function(i,selColor,cb1,cb2,notShown,k2,g,dc)
 					stage.overlay();
 				}
 	});
-	
-	
+
+
 	if (stage.iframe) $(div1).find('.sp-preview').click(function(e,a){stage.iframeClick(a);})
-	
+
 	var t=colorInput.spectrum("get");
 	return t.toRgb();
 }
@@ -1461,16 +1463,16 @@ stage.addSpecialColorDiv=function(selColor,text,value)
 		type: 'text'
 	});
 	colorInput.appendTo(div1);
-	
+
 	var div12=$('<div/>');
 	div12.addClass("span6 legendText");
 	div12.html(text);
-	
+
 	div1.appendTo(div);
 	div12.appendTo(div);
-	
+
 	div.appendTo('#legend');
-	
+
 	colorInput.spectrum({showInput: true,
 			    disabled:stage.iframe,
 						change: function(color) {
@@ -1478,7 +1480,7 @@ stage.addSpecialColorDiv=function(selColor,text,value)
 							stage.overlay();
 						}
 	});
-	
+
 	if (stage.iframe) $(div1).find('.sp-preview').click(function(e,a){stage.iframeClick(a);})
 	var t=colorInput.spectrum("get");
 	return t.toRgb();
@@ -1488,7 +1490,7 @@ stage.init_mouse_move_info=function()
 {
 	if (stage.infoWindowTemplate==null) return;
 	if (stage.infowindow!=null) return;
-	
+
 	stage.infowindow = new stage.stageinfo(new google.maps.LatLng(46.119944, 14.815333), map,stage.infoWindowTemplate);
 	//stage.infowindow.hide();
 		google.maps.event.addListener(map, 'mousemove', function(c) {
@@ -1501,7 +1503,7 @@ stage.init_mouse_move_info=function()
 		  var color="";
 		  var featureName;
 		  var variableValue;
-		  
+
 		  if (stage.the_overlay.cache[zoom]!==undefined &&
 			  stage.the_overlay.cache[zoom][tile.x]!==undefined &&
 			  stage.the_overlay.cache[zoom][tile.x][tile.y]!==undefined)
@@ -1522,7 +1524,7 @@ stage.init_mouse_move_info=function()
 				}
 			}
 		  }
-		  
+
 		  if (featureName===undefined) featureName='ID: GID_'+color;
 		  if (variableValue!==undefined)
 		  {
@@ -1533,7 +1535,7 @@ stage.init_mouse_move_info=function()
 				snd=cache.snd;
 				if (!isNaN(variableValue)) variableValue=numberWithCommas3(variableValue.toFixed(cache.dc));
 			}
-			
+
 			stage.infowindow.setText(featureName+"<br>"+(snd==""?stage.selectedVariableDescription:snd)+"<br><b>"+variableValue+"</b>");
 			stage.infowindow.show();
 		  }
@@ -1576,7 +1578,7 @@ stage.notesInfo=function(notes)
 		$('#variable-comments').hide();
 		return;
 	}
-	
+
 	$('#variable-comments').html(notes);
 	$('#variable-comments').show();
 }
@@ -1608,7 +1610,7 @@ stage.getVariableCache=function(create)
 	{
 		return stage.cache[stage.selectedLevelDatum][stage.selectedVariable];
 	}
-	
+
 	if (create===true)
 	{
 		if (stage.selectedLevelDatum!==null && stage.selectedVariable!==null)
@@ -1618,7 +1620,7 @@ stage.getVariableCache=function(create)
 			return stage.cache[stage.selectedLevelDatum][stage.selectedVariable];
 		}
 	}
-	
+
 	return null;
 }
 
@@ -1628,7 +1630,7 @@ stage.getVariableCache2=function(vid,did)
 	{
 		return stage.cache[did][vid];
 	}
-	
+
 	return null;
 }
 
@@ -1640,7 +1642,7 @@ stage.getColors=function(data)
 		colors=stage.selected_palette;
 	else
 		colors=jQuery.parseJSON($(data).find("cp:first").html());
-		
+
 	return colors;
 }
 
@@ -1662,7 +1664,7 @@ stage.classBreaks=function(data,cache)
 		else
 			classBreaks=cache.cb;
 	}
-	
+
 	var dc=$(data).find("ndc:first").html();
 	var g=Math.pow(10,-dc);
 	var nc=null;
@@ -1681,7 +1683,7 @@ stage.classBreaks=function(data,cache)
 		}
 		if (fvval.length==0) return false;
 		var gs=new geostats(fvval);
-		
+
 		var cb=[];
 		if (method==1)
 			cb=gs.getQuantile(nc);
@@ -1689,11 +1691,11 @@ stage.classBreaks=function(data,cache)
 			cb=gs.getEqInterval(nc);
 		else if (method==4)
 			cb=gs.getJenks(nc);
-			
+
 		cb.shift();
 		var _cb=[];
 		var cbinx=0;
-		
+
 		for (var i=0;cbinx<cb.length-1;i++)
 		{
 			if (i%2==0)
@@ -1701,12 +1703,12 @@ stage.classBreaks=function(data,cache)
 			else
 				_cb.push(parseFloat(_cb[i-1])+g);
 		}
-		
+
 		_cb.push(parseFloat(_cb[_cb.length-1])+g);
 		cb=_cb;
 		classBreaks=cb.join(",");
 	}
-	
+
 	cache.nc=nc;
 	cache.dc=dc;
 	cache.k2=k2;
@@ -1725,7 +1727,7 @@ stage.init_update_class_button=function()
 				alert(data);
 		}).fail(function(jqXHR){
 			alert(jqXHR.responseText);
-		});	
+		});
 	});
 }
 
@@ -1736,18 +1738,18 @@ stage.init_legend=function(data)
 	stats.max=parseFloat(stats.max);
 	var cache=stage.getVariableCache();
 	if (cache==null) return false;
-	
+
 	cache.specialValues=$.extend(true, {}, stage._specialValues);
 	cache.stats=stats;
-	
+
 	var colors=stage.getColors(data);
 	if (colors===undefined || colors==null) return false;
 	cache.cp=colors;
-	
+
 	var classBreaks=stage.classBreaks(data,cache);
 	if (classBreaks===undefined || classBreaks==null) return false;
 	cache.cb=classBreaks;
-	
+
 	var cba=classBreaks.split(',');
 	cba.unshift(cache.stats.min);
 	cba.push(cache.stats.max);
@@ -1767,24 +1769,24 @@ stage.init_legend=function(data)
 			}
 		}
 	}
-	
+
 	var fcol=colors.c[cache.nc];
 	if (fcol===undefined || !$.isArray(fcol)) {
 		fcol=colors.c;
 		if (fcol===undefined) return false;
 	}
-	
+
 	stage.render_legend(fcol,cache,cba);
-	
+
 	stage.init_editable_legend(cache.dc);
-	
+
 	return true;
 }
 
 stage.render_legend=function(colors,cache,cba)
 {
 	$("#legend").empty();
-	
+
 	if (cache.cba!==undefined)
 		cba=cache.cba;
 	else if (stage.cba_init!==undefined)
@@ -1793,7 +1795,7 @@ stage.render_legend=function(colors,cache,cba)
 		for (var k=0;k<cba.length;++k) cba[k]=parseFloat(cba[k]);
 		delete stage.cba_init;
 	}
-		
+
 	if (cache.colors!==undefined)
 		colors=cache.colors;
 	else if (stage.colors_init!==undefined)
@@ -1801,7 +1803,7 @@ stage.render_legend=function(colors,cache,cba)
 		colors=stage.colors_init;
 		delete stage.colors_init;
 	}
-	
+
 	var k=0;
 	var lngth=colors.length;
 	stage.cbac=[];
@@ -1815,7 +1817,7 @@ stage.render_legend=function(colors,cache,cba)
 		}
 	}
 	cba.push(lc);
-	
+
 	stage.cba=cba;
 	stage.colors=colors;
 }
@@ -1828,11 +1830,11 @@ stage.init_editable_legend=function(dc)
 		value=stage.removeSeparator(value);
 		if (!stage.isNumber(value)) return oldValue;
 		var jthis=$(this);
-		
+
 		var a=this.id.split("-");
 		var i=parseInt(a[1]);
 		var cb=a[0];
-		
+
 		if (jthis.hasClass("t0"))
 		{
 			if (value>=oldValue || value<0) return(oldValue);
@@ -1862,7 +1864,7 @@ stage.init_editable_legend=function(dc)
 		}
 		stage.overlay();
 		return(numberWithCommas3(parseFloat(value).toFixed(dc)));
-	 }, { 
+	 }, {
       tooltip   : stage.trans['sc.legend.click'],
       style  : "inherit",
 	  select: true
@@ -1897,7 +1899,7 @@ stage.getVariableNotes=function(link)
 	var notes="";
 	link.parents('li[data-cid]').each(function(){notes+=$(this).attr('data-cid')+",";});
 	var variableData=tjsdata[stage.selectedVariable];
-	
+
 	var data='<a target="_blank" href="http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset='+data_set+'&lang=en">Causes of death - Crude death rate by NUTS 2 region of residence ['+data_set+']</a>';
 	data+='<br>';
 	data+='<b>'+variableData.ICD10+'</b>&nbsp;'+variableData.definition;
@@ -1905,7 +1907,7 @@ stage.getVariableNotes=function(link)
 	data+='<small>The <b>crude death rate</b> describes mortality in relation to the total population. Expressed in deaths per 100,000 inhabitants, it is calculated as the number of deaths recorded in the population for a given period divided by population in the same period and then multiplied by 100,000. <a href="http://ec.europa.eu/eurostat/cache/metadata/en/hlth_cdeath_esms.htm" target="_blank">More info ...</a></small>'
 	stage.notesInfo(data);
 	cache.notes=data;
-	
+
 }
 
 stage.addDelineationTab=function()
@@ -1951,7 +1953,7 @@ stage.onVariableSelected=function(link,tag_id)
 		stage.setVariablePaginationWidget('level-datum',stage.onLevelDatumSelected);
 		return;
 	}
-	
+
 	if (stage.drawingManager.getMap()!=null)
 	{
 		if (stage.switchDelineationTab()==false)
@@ -1971,12 +1973,12 @@ stage.onVariableSelected=function(link,tag_id)
 			}
 		}
 	}
-	
+
 	if (stage.cachedVariable(true)) return;
 	var cache=stage.getVariableCache(true);
 	$('#progress').show();
 	stage.getVariableNotes(stage.selectedVariableLink);
-	
+
 	var p;
 	var sdmx,gdas;
 	var variableData=tjsdata[stage.selectedVariable];
@@ -1984,28 +1986,28 @@ stage.onVariableSelected=function(link,tag_id)
 	sdmx=stage.getSDMXLink(icd);
 	gdas=stage.getGDASLink(icd);
 	p="?request=JoinData&Service=TJS&Version=1.0&FrameworkURI=oskari/nuts2&GetDataURL=http%3A%2F%2F"+stage.basename+"%2Fto-gdas%2Fsdmx%3Fframework_url%3Dhttp%253A%252F%252F"+stage.basename+"%252Fgeoserver%252Ftjs%253Fservice%253DTJS%2526version%253D1.0.0%2526request%253DDescribeFrameworks%26dataset_url%3Dhttp%253A%252F%252F"+stage.basename+"%252F"+cached_data_folder+"%252F"+icd+".xml";
-	
+
 	var content_sel=$('#content-selection-text');
 	var sdmx_link='<a href="'+sdmx+'">SDMX file</a>';
 	var gdas_link='<a href="'+gdas+'">GDAS file</a>';
-	
+
 	if (content_sel.find("span#sdmx").length==0)
 		content_sel.append('<span id="sdmx">'+sdmx_link+'</span><br>');
 	else
 		content_sel.find("span#sdmx").html(sdmx_link);
-		
+
 	if (content_sel.find("span#gdas").length==0)
 		content_sel.append('<span id="gdas">'+gdas_link+'</span><br>');
 	else
 		content_sel.find("span#gdas").html(gdas_link);
-		
+
 	$.get('tjs_proxy.php',{'p':p},function(data){
 		var join_data_result_link='<a href="http://'+stage.basename+'/geoserver/tjs'+p+'">JoinData result</a>';
 		if (content_sel.find("span#JoinData").length==0)
 			content_sel.append('<span id="JoinData">'+join_data_result_link+'</span><br>');
 		else
 			content_sel.find("span#JoinData").html(join_data_result_link);
-			
+
 		var xmlDoc = $.parseXML(data);
 		$xml = $(xmlDoc);
 		var resource=$xml.find("Resource");
@@ -2016,11 +2018,11 @@ stage.onVariableSelected=function(link,tag_id)
 		{
 			dimensions.push('dim_'+years[i]);
 		}
-		
+
 		stage.jqXHRs['variableValues']=$.get('wfs_proxy.php',{'p':'?service=WFS&version=1.0.0&request=GetFeature&typeName=__temp:'+stage.layerTable+'&propertyName=ICC,NUTS_CODE,NUTS_LABEL,'+dimensions.join(',')+',OBJECTID&outputFormat=application/json'},function(data)
 		{
 			data=jQuery.parseJSON(data);
-			
+
 			stage.variableValues=[];
 			var fnames=[];
 			var dim='dim_'+$('#level-datum li.active').text();
@@ -2031,7 +2033,7 @@ stage.onVariableSelected=function(link,tag_id)
 				stage.variableValues[iccode]=prop[dim];
 				fnames[iccode]="ICC: "+prop.ICC+"<br>NUTS_CODE: "+prop.NUTS_CODE+"<br>NUTS_LABEL: "+prop.NUTS_LABEL;
 			}
-			
+
 			var lngth=stage.variableValues.length;
 			if (lngth==0 || (lngth==1)) {stage.clearLayer();return;}
 			cache.variableValues=stage.variableValues;
@@ -2071,7 +2073,7 @@ stage.onVariableSelected=function(link,tag_id)
 				$('#progress').hide();
 			}
 		});
-		
+
 	});
 }
 stage.clearLayer=function()
@@ -2086,10 +2088,10 @@ stage.clearLayer=function()
 stage.overlay=function(update)
 {
 	if (map.overlayMapTypes.length>0) map.overlayMapTypes.removeAt(0);
-	
+
 	var cache=stage.getVariableCache();
 	if (cache!=null) stage.specialValues=cache.specialValues;
-	
+
 	stage.the_overlay=stage.overlays[stage.selectedLevelDatum];
 	if (stage.the_overlay===undefined)
 	{
@@ -2124,7 +2126,7 @@ stage.init_variables_menu=function(menu_html)
 		stage.onVariableSelected($(this),$(this).parent().attr('href'));
 	});
 	stage.clearLayer();
-	
+
 	if (stage.selectedVariable!=null)
 	{
 		var menuItems=$('#variables-menu').find("li[href="+stage.selectedVariable+"]");
@@ -2162,7 +2164,7 @@ stage.triggerAlias=function(aliases)
 			return;
 		}
 	}
-	
+
 }
 stage.saveColorsAndClasses=function()
 {
@@ -2194,7 +2196,7 @@ stage.ap_play=function()
 	stage.auto_play={};
 	stage.auto_play.lngth=$('#level-datum').find("li").length;
 	stage.auto_play.cinx=$('li').index(active)+2;
-	stage.auto_play.ap_timer=window.setInterval( function(){ 
+	stage.auto_play.ap_timer=window.setInterval( function(){
 		$('#level-datum').find("li:nth-child("+stage.auto_play.cinx+") > a").trigger('click');
 		stage.auto_play.cinx++;
 	}, 2500);
@@ -2207,7 +2209,7 @@ stage.init_paginationWidget=function(_id,data,fun)
 	$('#ap-stop').click(function(){stage.ap_stop();});
 	$('#ap-play').click(function(){stage.ap_play();});
 	pagination(_id, fun);
-	
+
 	var page_link;
 	if (stage.selectedLevelDatum!=null && stage.selectedVariable!=null)
 		page_link="a[id="+stage.selectedLevelDatum+"]";
@@ -2215,23 +2217,23 @@ stage.init_paginationWidget=function(_id,data,fun)
 		page_link="a:contains('"+stage.previouslySelectedLevelDatumText+"')";
 	else
 		page_link="li:nth-child("+($('#level-datum').find("li").length)+") > a";
-	
+
 	if($('#level-datum').find(page_link).length==0) page_link="li:nth-child("+($('#level-datum').find("li").length)+") > a";
-		
+
 	$('#level-datum').find(page_link).trigger('click','trigg');
-	
+
 	if (stage.iframe)
 	{
 		$('#level-datum').find("li:not('.active')").hide();
 		$('#level-datum li.active > a').off();
 		$('#ap-stop,#ap-play').hide();
 	}
-	
+
 	//$('#progress').hide();
 }
 stage.setVariablePaginationWidget=function(control_id,fun)
 {
-	$('#progress').show();	
+	$('#progress').show();
 	var cache=stage.getLevelVariableCache();
 	if (cache.pagination===undefined)
 	{
@@ -2243,14 +2245,14 @@ stage.setVariablePaginationWidget=function(control_id,fun)
 					years.push(parseInt($(this).attr('name').replace('dim_','')));
 				});
 			years.sort();
-			
+
 			var pw="<div id='level-datum' class='pagination pagination-small' style='margin: 5px 0;'><ul>";
-			
+
 			for (var i=0;i<years.length;++i) {
 				pw+="<li><a href='#' id='dim_"+years[i]+"'>"+years[i]+"</a></li>";
 			}
 			pw+="</ul></div>";
-			
+
 			data=pw;
 			cache.pagination=data;
 			cache.dimensions=years;
@@ -2279,20 +2281,20 @@ stage.onLevelSelected=function(levelName,href,preserve)
 	$('#level-is-sel-text').append('<br><b>Abstract:</b>&nbsp'+$(fm).find('Abstract').html());
 	$('#level-is-sel-text').append('<br><b>FrameworkKey:</b>&nbsp'+$($(fm).find('FrameworkKey')).find('Column').attr('name'));
 	$('#level-is-sel-text').append('<br><a target="_blank" href="'+$(fm).find('DescribeDatasetsRequest').attr('xlink:href')+'"><b>DescribeDatasetsRequest</b></a>');
-	
+
 	var southWest = new google.maps.LatLng($(fm).find('South').text(),$(fm).find('West').text());
 	var northEast = new google.maps.LatLng($(fm).find('North').text(),$(fm).find('East').text());
 	var bounds = new google.maps.LatLngBounds(southWest,northEast);
 
 	$('#select-level').hide();
 	$('#level-is-sel').show();
-	
+
 	var cache=stage.getLevelCache();
 	if (cache.menu_html===undefined)
 	{
 		$('#progress').show();
 		var data='';
-		
+
 		for(var m in tjsmenu)
 		{
 			data+='<li class="dropdown-submenu">';
@@ -2378,36 +2380,42 @@ $(document).ready(function (){
 
 stage.initSpatialLevelMenu=function()
 {
-	$.get('tjs_proxy.php',{'p':'?service=TJS&request=DescribeFrameworks'},function(data){			
-		var xmlDoc = $.parseXML( data );
-		$xml = $( xmlDoc );
-		stage.frameworks=$xml.find("Framework");
-		for (var i=0;i<stage.frameworks.length;++i) {
-			var fmtitle=$(stage.frameworks[i]).find('Title').html();
-			$('#level-menu').append("<li href='"+i+"'><a data-mid='"+i+"' href='#'>"+fmtitle+"</a></li>");
-		}
-			$('#level-menu').find("li[href='#']").remove();
-			$('#level-menu').find("li[href] > a").click(function(e){
-				e.preventDefault();
-				stage.onLevelSelected($(this).text(),$(this).parent().attr('href'));
-			});
-			$('#progress').hide();
-			$('#select-level').show();
-			var q=stage.QueryString;
-			if (q.id!==undefined)
-			{
-				var x=$('#level-menu').find("li[href='"+q.id+"'] > a")
-				stage.selectedVariable=q.tag;
-				stage.selectedLevelDatum=q.idl;
-				stage.colors_init=q.c.split(",");
-				stage.cba_init=q.cba.split(",");
-				map.setZoom(parseInt(q.z));
-				map.setCenter(new google.maps.LatLng(parseFloat(q.lat),parseFloat(q.lng)));
-				map.setMapTypeId(q.t);
-				stage.opacity=q.o;
-				stage.onLevelSelected(x.text(),q.id,true);
-			}
-	});
+	$.ajax({
+        type: "GET",
+				url: TJS_URL + "?service=TJS&version=1.0.0&request=DescribeFrameworks",
+				dataType: "xml",
+				success: function(data){
+					var xmlDoc = $.parseXML( data );
+					$xml = $( data );
+					console.log(data);
+					stage.frameworks=$xml.find("Framework");
+					for (var i=0;i<stage.frameworks.length;++i) {
+						var fmtitle=$(stage.frameworks[i]).find('Title').html();
+						$('#level-menu').append("<li href='"+i+"'><a data-mid='"+i+"' href='#'>"+fmtitle+"</a></li>");
+					}
+						$('#level-menu').find("li[href='#']").remove();
+						$('#level-menu').find("li[href] > a").click(function(e){
+							e.preventDefault();
+							stage.onLevelSelected($(this).text(),$(this).parent().attr('href'));
+						});
+						$('#progress').hide();
+						$('#select-level').show();
+						var q=stage.QueryString;
+						if (q.id!==undefined)
+						{
+							var x=$('#level-menu').find("li[href='"+q.id+"'] > a")
+							stage.selectedVariable=q.tag;
+							stage.selectedLevelDatum=q.idl;
+							stage.colors_init=q.c.split(",");
+							stage.cba_init=q.cba.split(",");
+							map.setZoom(parseInt(q.z));
+							map.setCenter(new google.maps.LatLng(parseFloat(q.lat),parseFloat(q.lng)));
+							map.setMapTypeId(q.t);
+							stage.opacity=q.o;
+							stage.onLevelSelected(x.text(),q.id,true);
+						}
+				}
+		});
 }
 
 stage.sortArray=function (all,dsc)
@@ -2431,7 +2439,7 @@ stage.drawChart=function(ids,dsc)
 	$('#'+chid).replaceWith('<canvas id="'+chid+'" width="280" height="250"></canvas>');
 	var ctx = document.getElementById(chid).getContext("2d");
 	var featureNames=stage.getVariableCache2("feature_name",stage.selectedLevelDatum);
-	
+
 	var all=[];
 	for (var key in ids)
 	{
@@ -2442,19 +2450,19 @@ stage.drawChart=function(ids,dsc)
 			if (afn.length>1) {
 				featureName=afn[1].replace('NUTS_CODE:','').trim();
 			}
-			
+
 		}
 		else
 			featureName="GID_"+key;
-			
+
 		all.push([cache.variableValues[parseInt(key)-1],featureName]);
 	}
-	
+
 	stage.sortArray(all,dsc)
-	
+
 	var labels=[];
 	var dsdata=[];
-	
+
 	var len=all.length;
 	$('#nitems-'+sgid).html(len+"&nbsp;");
 	var aldiv=$('#alert-'+sgid);
@@ -2469,13 +2477,13 @@ stage.drawChart=function(ids,dsc)
 		aldiv.empty();
 		aldiv.removeAttr('title');
 	}
-	
+
 	for (var i=0;i<len;i++)
 	{
 		labels.push(all[i][1]);
 		dsdata.push(all[i][0]);
 	}
-	
+
 	var data = {
 	labels : labels,
 	datasets : [
@@ -2535,7 +2543,7 @@ stage.group=function(id,levelId,levelDatum,variable)
 	this.updated=true;
 	this.ga=[];
 	this.ids=[];
-	
+
 	var selectedGroup=stage.groups[stage.selectedGroupInx];
 	if (stage.selectedGroupInx !=null && selectedGroup!==undefined)
 	{
@@ -2561,7 +2569,7 @@ stage.clone=function(s)
 		editable: true,
 		suppressUndo:true,
 		zIndex: s.zIndex};
-	
+
 	var clone=null;
 	if (type=='m') {
 		clone=new google.maps.Marker(opt);
@@ -2589,7 +2597,7 @@ stage.clone=function(s)
 		google.maps.event.addListener(clone, 'radius_changed', function(){stage.onShapeChanged();});
 		google.maps.event.addListener(clone, 'center_changed', function(){stage.onShapeChanged();});
 	}
-	
+
 	if (clone!=null)
 	{
 		if (type!='m')
@@ -2600,7 +2608,7 @@ stage.clone=function(s)
 		clone.type=type;
 		clone.add=s.add;
 	}
-	
+
 	return clone;
 }
 
@@ -2645,7 +2653,7 @@ stage.drawAggregate=function()
 		idg[group.levelDatum]=adg;
 		ids.push(idg);
 	}
-	
+
 	$.post(stage.host+"admin/index.php?r=general/aggregate",{'tds':JSON.stringify(tds),'ids':JSON.stringify(ids)}).done(function(data)
 	{
 		var r=jQuery.parseJSON(data);
@@ -2664,13 +2672,13 @@ stage.drawAggregate=function()
 			{
 				dsdata.push(r[i]);
 			}
-			
+
 			labels.push(i+1);
 			legend.push("<p><b>"+(i+1)+"</b>&nbsp;&nbsp;&nbsp;"+$('#acc-'+stage.groups[i].id).text()+"</p>");
 		}
-		
+
 		$('#aggregate-chart').replaceWith('<canvas id="aggregate-chart" height="250px" style="width:100%"></canvas>');
-		
+
 		var ctx = document.getElementById("aggregate-chart").getContext("2d");
 		var gdata = {
 		labels : labels,
@@ -2684,11 +2692,11 @@ stage.drawAggregate=function()
 			}
 			]
 		}
-	
+
 		var myNewChart = new Chart(ctx).Bar(gdata);
-		
+
 		$("#aggregate-modal #legend").html("<div>"+legend.join("")+"</div>");
-		
+
 	}).fail(function(jqXHR)
 	{
 		$('#aggr-status').html(jqXHR.responseText);
@@ -2716,13 +2724,13 @@ stage.onAccTabClicked=function(gc)
 	}
 	stage.selectedGroupInx=stage.groupId2Inx(gc);
 	var selectedGroup=stage.groups[stage.selectedGroupInx];
-	
+
 	if (selectedGroup.levelId!=stage.selectedLevelId ||
 		selectedGroup.levelDatum!=stage.selectedLevelDatum ||
 		selectedGroup.variable!=stage.selectedVariable) {
-		stage.selectView(selectedGroup.levelId,selectedGroup.levelDatum,selectedGroup.variable);	
+		stage.selectView(selectedGroup.levelId,selectedGroup.levelDatum,selectedGroup.variable);
 	}
-	
+
 	if (selectedGroup.ga!==undefined)
 	{
 		var len=selectedGroup.ga.length;
@@ -2732,7 +2740,7 @@ stage.onAccTabClicked=function(gc)
 			if (shape.type!='m') shape.setMap(map);
 		}
 	}
-	
+
 	if (selectedGroup.ids!==undefined)
 	{
 		if (ogroup!==undefined)
@@ -2761,7 +2769,7 @@ stage.init_links=function()
 		$('#level-menu').find('a').removeClass('show-selection');
 		$('#level-menu').find("li[href='"+stage.selectedLevelId+"'] > a").addClass('show-selection');
 	});
-	
+
 	$('#var-m-root').click(function(){
 		if (stage.selectedVariable===null) return;
 		$('#variables-menu').find('a').removeClass('show-selection');
@@ -2775,13 +2783,13 @@ stage.init_links=function()
 			codeAddress();
 		}
 	});
-	
+
 	$('#hand,#circ,#shape,#rect,#point').click(function(){
 		stage.resetDrawingControl();
 		stage.setSelection(null,null);
 		var id=$(this).attr('id');
 		var mode=null;
-		
+
 		if (id!='hand') {
 			if (stage.delineation_overlay!==undefined)
 			{
@@ -2789,7 +2797,7 @@ stage.init_links=function()
 				stage.delineation_overlay.overlay.setVisible(false);
 			}
 		}
-		
+
 		if (id=='circ')
 		{
 			mode=google.maps.drawing.OverlayType.CIRCLE;
@@ -2822,12 +2830,12 @@ stage.init_links=function()
 					stage.radius_infowindow.open(map);
 					$('#radius').val(stage.formatRadius(shape));
 				}
-				
+
 			}
 		}
 		stage.onDrawingModeSelected(mode);
 	});
-	
+
 	$('#remove-shape').click(function()
 	{
 		var groups=stage.groups[stage.selectedGroupInx].ga;
@@ -2838,7 +2846,7 @@ stage.init_links=function()
 				var i=groups.indexOf(stage.groups[stage.selectedGroupInx].selection);
 				groups.splice(i, 1);
 			}
-			
+
 			stage.groups[stage.selectedGroupInx].selection.setMap(null);
 			delete stage.groups[stage.selectedGroupInx].selection;
 			stage.groups[stage.selectedGroupInx].selection=null;
@@ -2863,14 +2871,14 @@ stage.init_links=function()
 		}
 		$(this).blur();
 	});
-	
+
 	$('#show-shapes').click(function()
 	{
 		var visible=$(this).hasClass("s_show");
 		var swap_trans=function(that){var t=stage.trans["show_selectors"];
 			stage.trans["show_selectors"]=$(that).attr('title');
 			$(that).attr('title',t);};
-		
+
 		var icon="";
 		if (visible)
 		{
@@ -2886,9 +2894,9 @@ stage.init_links=function()
 			$(this).addClass("s_show");
 			swap_trans(this);
 		}
-		
+
 		$(this).html(icon);
-		
+
 		if (stage.groups[stage.selectedGroupInx].ga!==undefined)
 		{
 			var len=stage.groups[stage.selectedGroupInx].ga.length;
@@ -2900,7 +2908,7 @@ stage.init_links=function()
 		}
 		$(this).blur();
 	});
-	
+
 	$('#addition').click(function()
 	{
 		var selection=stage.groups[stage.selectedGroupInx].selection;
@@ -2922,7 +2930,7 @@ stage.init_links=function()
 		$(this).addClass("active");
 		$('#subtraction').removeClass("active");
 	});
-	
+
 	$('#subtraction').click(function()
 	{
 		var selection=stage.groups[stage.selectedGroupInx].selection;
@@ -2944,17 +2952,17 @@ stage.init_links=function()
 		$(this).addClass("active");
 		$('#addition').removeClass("active");
 	});
-	
+
 	$('#aggregate-modal').on('shown', function () {
 		stage.drawAggregate();
 	})
-	
+
 	$('#close-delineation').click(function(){
 		theLayout.hide('east');
 		stage.clear_selection();
 		stage.drawingManager.setMap(null);
 	});
-	
+
 	$('#add-a-group').click(function(){
 		$('#cselect').show();
 		$('#aggregate').show();
@@ -2980,14 +2988,14 @@ stage.init_links=function()
 				</div>\
 			</div>\
 		</div>').replace(/%1/g,gc));
-		
+
 		var theGroup=new stage.group(gc,stage.selectedLevelId,stage.selectedLevelDatum,stage.selectedVariable);
 		stage.groups.push(theGroup);
-		
+
 		$('.asc,.dsc').on('click',function() {
 			stage.drawChart(null,$(this).hasClass('dsc'));
 		});
-		
+
 		stage.onAccTabClicked(gc);
 		$('#acc-'+gc).trigger('click');
 		$('#acc-'+gc).on('click', function (e) {
@@ -2999,7 +3007,7 @@ stage.init_links=function()
 			}
 			stage.onAccTabClicked(gc);
 		});
-		
+
 		$('#remove-group-'+gc).click(function(){
 			$(this).parent().parent().parent().remove();
 			if ($("#accordion2").find('.in').length!=1) $('#cselect').hide();
@@ -3017,7 +3025,7 @@ stage.init_links=function()
 			}
 			stage.groups.splice(rgi,1);
 			removedGroup=null;
-			
+
 			if (stage.groups.length==0) {
 				stage.clear_selection();
 				stage.groups=[];
@@ -3026,7 +3034,7 @@ stage.init_links=function()
 				$('#cselect').hide();
 				return;
 			}
-			
+
 			if (rgi==stage.selectedGroupInx)
 			{
 				stage.selectedGroupInx=null;
@@ -3043,8 +3051,8 @@ stage.init_links=function()
 		});
 		$(this).blur();
 	})
-	
-	
+
+
 	$('#auto-zoom').click(function(){
 		if ($(this).prop("checked"))
 		{
@@ -3063,7 +3071,7 @@ stage.init_links=function()
 			}
 			else
 				stage.auto_zoom=true;
-			
+
 			$('#level-menu').find('li').hide();
 			$('#automatic-zoom').show();
 		}
@@ -3073,7 +3081,7 @@ stage.init_links=function()
 			$('#level-menu').find('li').show();
 		}
 	});
-	
+
 	$('#delineation').click(function(){
 		theLayout.show('east');
 		stage.drawingManager.setMap(map);
@@ -3084,7 +3092,7 @@ stage.init_links=function()
 			}
 		}
 	});
-	
+
 	$('#clear-all-groups').click(function(){
 		var len = stage.groups.length;
 		for (var i=0;i<len;++i)
@@ -3100,19 +3108,19 @@ stage.init_links=function()
 					shape=null;
 				}
 			}
-			
+
 			removedGroup=null;
 		}
-		
+
 		$('#accordion2').empty();
 		$('#cselect').hide();
 		$('#aggregate').hide();
 		stage.groups=[];
 		stage.selectedGroupInx=null;
 		stage.clear_selection();
-		$(this).blur();	
+		$(this).blur();
 	});
-	
+
 	$('#deep-linking').click(function(){
 		$('#modal-header').html(stage.trans['share-map']);
 		$('#modal-body').html('<div>'+stage.trans['share-link']+'</div>'+'<input id="deep-link" type="text" style="width:98%" value="'+stage.deepLink()+'">');
@@ -3120,7 +3128,7 @@ stage.init_links=function()
 		$('#deep-link, #embed').focus(function() { $(this).select() }).mouseup(function(e){e.preventDefault();});
 		$('#modal').modal();
 	});
-	
+
 	$('#export').click(function(){
 		$('#modal-header').html(stage.trans['export']);
 		$('#modal-body').empty();
@@ -3147,20 +3155,20 @@ stage.init_links=function()
 		stage.save2png();
 		$('#modal').modal();
 	});
-	
+
 	$('#settings-color').click(function(){
 		$('#modal-header').html(stage.trans['color-catalogue']);
 		$('#modal-body').html('ccat');
 		$('#modal').modal();
 	});
-	
+
 	$('#modal').on('shown', function() {
 		if ($('#modal-body').html()!=='ccat') return;
 		var s=stage.nclasses;
 		if (stage.selectedLevelDatum!=null && stage.cache[stage.selectedLevelDatum]!==undefined &&
 			stage.cache[stage.selectedLevelDatum][stage.selectedVariable]!==undefined &&
 			stage.cache[stage.selectedLevelDatum][stage.selectedVariable].nc!==undefined) s=stage.cache[stage.selectedLevelDatum][stage.selectedVariable].nc;
-		
+
 			if (stage.catalogue===undefined)
 			{
 				$.get(stage.host+"admin/?r=general/catalogue",{s:s},function(data){
@@ -3191,7 +3199,7 @@ stage.render_catalogue=function(data)
 		if (that.is(':checked'))
 		{
 			stage.set_selected_palette(that.attr('data-name'));
-			
+
 			$('#modal').modal('hide');
 			stage.unsetCache('colors');
 			stage.cachedVariable(true);
@@ -3224,7 +3232,7 @@ function pagination(id,_onItemClicked)
 }
 
 function QueryString() {
-  // This function is anonymous, is executed immediately and 
+  // This function is anonymous, is executed immediately and
   // the return value is assigned to QueryString!
   var query_string = {};
   var query = window.location.search.substring(1);
@@ -3242,7 +3250,7 @@ function QueryString() {
     } else {
       query_string[pair[0]].push(pair[1]);
     }
-  } 
+  }
     return query_string;
 }
 
@@ -3254,7 +3262,7 @@ stage.getDefaultValues=function()
 	'color_palette':'{"n":"OrRd","c":{"3":["#fee8c8","#fdbb84","#e34a33"],"4":["#fef0d9","#fdcc8a","#fc8d59","#d7301f"],"5":["#fef0d9","#fdcc8a","#fc8d59","#e34a33","#b30000"],"6":["#fef0d9","#fdd49e","#fdbb84","#fc8d59","#e34a33","#b30000"],"7":["#fef0d9","#fdd49e","#fdbb84","#fc8d59","#ef6548","#d7301f","#990000"],"8":["#fff7ec","#fee8c8","#fdd49e","#fdbb84","#fc8d59","#ef6548","#d7301f","#990000"],"9":["#fff7ec","#fee8c8","#fdd49e","#fdbb84","#fc8d59","#ef6548","#d7301f","#b30000","#7f0000"]}}',
 'nclasses':"5",
 'special_values':[]};
-	
+
 	stage.specialValues(stage.dvals['special_values']);
 	stage.nclasses=stage.dvals['nclasses'];
 	stage.color_palette=stage.dvals['color_palette'];
