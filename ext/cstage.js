@@ -693,6 +693,7 @@ LevelMapType.prototype.getTile = function(coord, zoom, ownerDocument) {
 	var ctx=canvas.getContext('2d');
 
 	var img = new Image;
+	img.crossOrigin = "Anonymous";
 	if (cache===undefined)
 	{
 		img.onload = function()
@@ -2043,7 +2044,6 @@ stage.onVariableSelected=function(link,tag_id)
 		//{'p':'?service=WFS&version=1.0.0&request=GetFeature&typeName=__temp:'+stage.layerTable+'&propertyName=ICC,NUTS_CODE,NUTS_LABEL,'+dimensions.join(',')+',OBJECTID&outputFormat=application/json'}
 
 		stage.jqXHRs['variableValues']=$.ajax({ url: 'http://' + stage.tjsBasename + '/geoserver/tjs', data: p, dataType: 'json', success: function(data){
-		{ console.log(data);
 			//data=jQuery.parseJSON(data);
 
 			stage.variableValues=[];
@@ -2096,7 +2096,8 @@ stage.onVariableSelected=function(link,tag_id)
 				$('#progress').hide();
 			}
 		}
-		}});
+	});
+
 	}});
 }
 stage.clearLayer=function()
