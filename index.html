@@ -25,7 +25,7 @@
 <script type="text/javascript" src="ext/Chart.min.js"></script>
 <script type="text/javascript" src="ext/jquery.jeditable.mini.js"></script>
 <script type="text/javascript" src="ext/geostats.min.js"></script>
-<script type="text/javascript" src="http://maps.google.com/maps/api/js?v=3&amp;sensor=false&amp;language=sl&amp;libraries=drawing"></script>
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?v=3&amp;sensor=false&amp;language=en&amp;libraries=drawing"></script>
 <script type="text/javascript" src="ext/keydragzoom_packed.js"></script>
 <script type="text/javascript" src="ext/pagination/pagination.js"></script>
 <script type="text/javascript">
@@ -53,7 +53,7 @@ stage.lang='en';stage.host='http://localhost/jstjs/';stage.dvals={};
 				<b>Select a level ...</b>
 			</div>
 		</div>
-		
+
 		<div class="span10 offset1" id="canvas-error" style="display: none;margin-top: 7px">
 			<div class="alert alert-error">
 				<b>HTML5 canvas is not supported. This application only works in the browsers that support HTML5 canvas.</b>
@@ -131,7 +131,7 @@ stage.lang='en';stage.host='http://localhost/jstjs/';stage.dvals={};
 						<ul id='variables-menu' class="dropdown-menu">
 						</ul>
 					</li>
-					
+
 					<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
 								Tools <b class="caret"></b>
@@ -210,34 +210,34 @@ stage.lang='en';stage.host='http://localhost/jstjs/';stage.dvals={};
 				<button id="subtraction" class="btn btn-small" style="width:100%" title="Remove from selection" type="button"><i class="icon-minus"></i></button>			</div>
 		</div>
 	</div>
-	
+
 	<hr style="margin-top: 5px">
 	<!--
 	<table id="dtable" class="table table-hover  table-striped">
 	</table>
 	<canvas id="myChart" width="280" height="250"></canvas>
 	-->
-	
+
 	<div class="accordion" id="accordion2" style="margin-top: -10px">
 	</div>
-	
+
 	<div>
-		<button id="aggregate" href="#aggregate-modal" class="btn btn-small" style='width:100%;display:none' type="button" data-toggle="modal">Delineation statistics</button>	
+		<button id="aggregate" href="#aggregate-modal" class="btn btn-small" style='width:100%;display:none' type="button" data-toggle="modal">Delineation statistics</button>
 	</div>
-	
+
 	</div>
-	
+
 </div><div class="ui-layout-south">
 </div><script type="text/javascript">
 /*<![CDATA[*/
 jQuery(function($) {
-stage.trans=[];stage.trans['ali_manj']='ali manj';stage.trans['ali_vec']='ali več';stage.trans['sc.legend.color']='Change color';stage.trans['sc.legend.click']='Change value';stage.trans['sc.legend.slide']='Change interval';stage.trans['sc.legend.grey']='Not shown due to unsuitability of data presentation due to the site range of the phenomenon, due to statistical confidentiality or where the expression has no meaning.';stage.trans['sc.leveldatum.select']='Select year';stage.trans['sc.stop']='Stop';stage.trans['sc.play']='Play';stage.trans['sc.sort.descending']='Sort descending';stage.trans['sc.sort.ascending']='Sort ascending';stage.trans['sc.keydragzoom']='Set scale';stage.trans['selected']='Selected content:';stage.trans['share-map']='Share this map';stage.trans['share-link']='Link';stage.trans['share-embed']='Embed';stage.trans['color-catalogue']='Color catalogue';stage.trans['click-to-edit']='Click to edit ...';stage.trans['slo']='Vrednost za Slovenijo:';stage.trans['export']='export';stage.trans['export_image']='export image';stage.trans['show_selectors']='Show shape';stage.trans['export_shp']='export SHP';stage.trans['alert20-txt']='n > 20';stage.trans['alert20-title']='only 20 items are shown';stage.trans['delin-n-items-title']='number of selected items';stage.trans['delin-n-items-txt']='n:';stage.trans['radius']='radius:';stage.trans['radius-submit']='Select features';stage.decimal=".";stage.separator=",";
+stage.trans=[];stage.trans['ali_manj']='or lower';stage.trans['ali_vec']='or higher';stage.trans['sc.legend.color']='Change color';stage.trans['sc.legend.click']='Change value';stage.trans['sc.legend.slide']='Change interval';stage.trans['sc.legend.grey']='Not shown due to unsuitability of data presentation due to the site range of the phenomenon, due to statistical confidentiality or where the expression has no meaning.';stage.trans['sc.leveldatum.select']='Select year';stage.trans['sc.stop']='Stop';stage.trans['sc.play']='Play';stage.trans['sc.sort.descending']='Sort descending';stage.trans['sc.sort.ascending']='Sort ascending';stage.trans['sc.keydragzoom']='Set scale';stage.trans['selected']='Selected content:';stage.trans['share-map']='Share this map';stage.trans['share-link']='Link';stage.trans['share-embed']='Embed';stage.trans['color-catalogue']='Color catalogue';stage.trans['click-to-edit']='Click to edit ...';stage.trans['slo']='Vrednost za Slovenijo:';stage.trans['export']='export';stage.trans['export_image']='export image';stage.trans['show_selectors']='Show shape';stage.trans['export_shp']='export SHP';stage.trans['alert20-txt']='n > 20';stage.trans['alert20-title']='only 20 items are shown';stage.trans['delin-n-items-title']='number of selected items';stage.trans['delin-n-items-txt']='n:';stage.trans['radius']='radius:';stage.trans['radius-submit']='Select features';stage.decimal=".";stage.separator=",";
 });
 /*]]>*/
 </script>
 </body>
 </html>
- 
+
 <!-- Modal -->
 <div id="modal" class="modal hide" tabindex="-1" role="dialog">
   <div class="modal-header">

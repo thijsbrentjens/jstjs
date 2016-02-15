@@ -780,12 +780,11 @@ function codeAddress() {
 
 function initMap() {
     var mapOptions = {
-    zoom: 5,
-    center: new google.maps.LatLng(54.767403, 29.0936),
-    mapTypeId: google.maps.MapTypeId.ROADMAP,
-	mapTypeControlOptions: {
-		mapTypeIds:[google.maps.MapTypeId.ROADMAP,google.maps.MapTypeId.SATELLITE,google.maps.MapTypeId.HYBRID,google.maps.MapTypeId.TERRAIN,'elf_basemap'],
-		style: google.maps.MapTypeControlStyle.DROPDOWN_MENU
+    zoom: 8,
+    center: new google.maps.LatLng(52.15, 5.38),
+    mapTypeId: 'elf_basemap',
+		mapTypeControlOptions: {
+			mapTypeIds:['elf_basemap']
 	}
   };
   geocoder = new google.maps.Geocoder();
@@ -812,7 +811,7 @@ function initMap() {
 	map.mapTypes.set(mname, coordinateMapType);
   //
   /////////////////
-  map.setMapTypeId(google.maps.MapTypeId.ROADMAP);
+  map.setMapTypeId('elf_basemap');
 
   stage.initStageInfoWindow();
   stage.getDefaultValues();
@@ -1907,7 +1906,7 @@ stage.getVariableNotes=function(link)
 	data+='<br>';
 	data+='<b>'+variableData.ICD10+'</b>&nbsp;'+variableData.definition;
 	data+='<br>';
-	data+='<small>The <b>crude death rate</b> describes mortality in relation to the total population. Expressed in deaths per 100,000 inhabitants, it is calculated as the number of deaths recorded in the population for a given period divided by population in the same period and then multiplied by 100,000. <a href="http://ec.europa.eu/eurostat/cache/metadata/en/hlth_cdeath_esms.htm" target="_blank">More info ...</a></small>'
+	// data+='<small>The <b>crude death rate</b> describes mortality in relation to the total population. Expressed in deaths per 100,000 inhabitants, it is calculated as the number of deaths recorded in the population for a given period divided by population in the same period and then multiplied by 100,000. <a href="http://ec.europa.eu/eurostat/cache/metadata/en/hlth_cdeath_esms.htm" target="_blank">More info ...</a></small>'
 	stage.notesInfo(data);
 	cache.notes=data;
 
@@ -1940,7 +1939,7 @@ stage.getSDMXLink=function (icd)
 stage.getGDASLink=function(url)
 {
 	url = encodeURI(url);
-	return "http://"+stage.tjsBasename+"/convert/a/convert/odata?tjs_url=http://"+stage.tjsBasename+"/geoserver/tjs&framework_uri=http://geodata.nationaalgeoregister.nl/cbsgebiedsindelingen/wfs/CBSGemeente2012&dataset_url=" + url;
+	return "http://"+stage.tjsBasename+"/convert/a/convert/odata?tjs_url=http://"+stage.tjsBasename+"/geoserver/tjs&framework_uri=" + stage.selectedFrameworkURI + "&dataset_url=" + url;
 }
 
 stage.onVariableSelected=function(link,tag_id)
@@ -1992,7 +1991,7 @@ stage.onVariableSelected=function(link,tag_id)
   p.request = 'JoinData';
 	p.Service = 'TJS';
 	p.Version = '1.0.0';
-	p.FrameworkURI = encodeURI('http://geodata.nationaalgeoregister.nl/cbsgebiedsindelingen/wfs/CBSGemeente2012');
+	p.FrameworkURI = encodeURI(stage.selectedFrameworkURI);
 	p.GetDataURL = encodeURI(gdas);
 
 	//"?request=JoinData&Service=TJS&Version=1.0&FrameworkURI=oskari/nuts2&GetDataURL=http%3A%2F%2F"+stage.basename+"%2Fto-gdas%2Fsdmx%3Fframework_url%3Dhttp%253A%252F%252F"+stage.basename+"%252Fgeoserver%252Ftjs%253Fservice%253DTJS%2526version%253D1.0.0%2526request%253DDescribeFrameworks%26dataset_url%3Dhttp%253A%252F%252F"+stage.basename+"%252F"+cached_data_folder+"%252F"+icd+".xml";
@@ -2016,7 +2015,7 @@ stage.onVariableSelected=function(link,tag_id)
 			data: p,
 			dataType: 'xml',
 			success: function(data){
-		var join_data_result_link='<a href="http://'+stage.tjsBasename+'/geoserver/tjs'+p+'">JoinData result</a>';
+		var join_data_result_link='<a href="http://'+stage.tjsBasename+'/geoserver/tjs?'+$.param(p)+'">JoinData result</a>';
 		if (content_sel.find("span#JoinData").length==0)
 			content_sel.append('<span id="JoinData">'+join_data_result_link+'</span><br>');
 		else
@@ -2030,7 +2029,7 @@ stage.onVariableSelected=function(link,tag_id)
 		var dimensions=[];
 		for (var i=0;i<years.length;++i)
 		{
-			dimensions.push('dim_'+years[i]);
+			dimensions.push(years[i]);
 		}
 
 		p = {};
@@ -2038,7 +2037,7 @@ stage.onVariableSelected=function(link,tag_id)
 		p.version = '1.0.0';
 		p.request = 'GetFeature';
 		p.typeName = '__temp:' + stage.layerTable;
-		p.propertyName = 'id,statcode,statnaam,TotaalAlleDoodsoorzaken_1'
+		p.propertyName = 'id,statcode,statnaam,' + dimensions.join(',');
 		p.outputFormat = 'application/json';
 
 		//{'p':'?service=WFS&version=1.0.0&request=GetFeature&typeName=__temp:'+stage.layerTable+'&propertyName=ICC,NUTS_CODE,NUTS_LABEL,'+dimensions.join(',')+',OBJECTID&outputFormat=application/json'}
@@ -2048,7 +2047,7 @@ stage.onVariableSelected=function(link,tag_id)
 
 			stage.variableValues=[];
 			var fnames=[];
-			var dim='TotaalAlleDoodsoorzaken_1';//+$('#level-datum li.active').text();
+			var dim = $('#level-datum li.active').text();
 			for (var i=0; i<data.features.length;++i)
 			{
 				var prop=data.features[i].properties;
@@ -2265,12 +2264,14 @@ stage.setVariablePaginationWidget=function(control_id,fun)
 		var icd=variableData['url'];
 		$.get(stage.getGDASLink(icd),function(data){
 			var years=[];
-			$(data).find("ColumnSet Column[name^='Perioden']").each(function(){
-					//years.push(parseInt($(this).attr('name').replace('dim_','')));
+			$(data).find("Attributes Column").each(function(){
+				  if ($(this).attr('name') != 'Perioden') {
+						years.push($(this).attr('name'));
+					}
 					// todo
-					years.push(2014);
+					//years.push(2014);
 				});
-			years.sort();
+			//years.sort();
 			console.log(years);
 
 			var pw="<div id='level-datum' class='pagination pagination-small' style='margin: 5px 0;'><ul>";
@@ -2304,6 +2305,7 @@ stage.onLevelSelected=function(levelName,href,preserve)
 	stage.selectedLevelId=href;
 	$('#level-is-sel-text').html('<b>'+levelName+'</b>');
 	var fm=stage.frameworks[parseInt(href)];
+	stage.selectedFrameworkURI = $(fm).find('FrameworkURI').html();
 	$('#level-is-sel-text').append('<br><b>FrameworkURI:</b>&nbsp'+$(fm).find('FrameworkURI').html());
 	$('#level-is-sel-text').append('<br><b>Abstract:</b>&nbsp'+$(fm).find('Abstract').html());
 	$('#level-is-sel-text').append('<br><b>FrameworkKey:</b>&nbsp'+$($(fm).find('FrameworkKey')).find('Column').attr('name'));
