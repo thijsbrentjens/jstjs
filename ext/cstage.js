@@ -1938,7 +1938,7 @@ stage.getSDMXLink=function (icd)
 
 stage.getGDASLink=function(url)
 {
-	url = encodeURI(url);
+	url = encodeURIComponent(url).replace(/'/g,"%27").replace(/"/g,"%22");
 	return "http://"+stage.tjsBasename+"/convert/a/convert/odata?tjs_url=http://"+stage.tjsBasename+"/geoserver/tjs&framework_uri=" + stage.selectedFrameworkURI + "&dataset_url=" + url;
 }
 
@@ -1991,8 +1991,8 @@ stage.onVariableSelected=function(link,tag_id)
   p.request = 'JoinData';
 	p.Service = 'TJS';
 	p.Version = '1.0.0';
-	p.FrameworkURI = encodeURI(stage.selectedFrameworkURI);
-	p.GetDataURL = encodeURI(gdas);
+	p.FrameworkURI = encodeURIComponent(stage.selectedFrameworkURI).replace(/'/g,"%27").replace(/"/g,"%22");
+	p.GetDataURL = encodeURIComponent(gdas).replace(/'/g,"%27").replace(/"/g,"%22");
 
 	//"?request=JoinData&Service=TJS&Version=1.0&FrameworkURI=oskari/nuts2&GetDataURL=http%3A%2F%2F"+stage.basename+"%2Fto-gdas%2Fsdmx%3Fframework_url%3Dhttp%253A%252F%252F"+stage.basename+"%252Fgeoserver%252Ftjs%253Fservice%253DTJS%2526version%253D1.0.0%2526request%253DDescribeFrameworks%26dataset_url%3Dhttp%253A%252F%252F"+stage.basename+"%252F"+cached_data_folder+"%252F"+icd+".xml";
 	var content_sel=$('#content-selection-text');
