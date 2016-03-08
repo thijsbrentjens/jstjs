@@ -1996,8 +1996,8 @@ stage.onVariableSelected=function(link,tag_id)
 
 	//"?request=JoinData&Service=TJS&Version=1.0&FrameworkURI=oskari/nuts2&GetDataURL=http%3A%2F%2F"+stage.basename+"%2Fto-gdas%2Fsdmx%3Fframework_url%3Dhttp%253A%252F%252F"+stage.basename+"%252Fgeoserver%252Ftjs%253Fservice%253DTJS%2526version%253D1.0.0%2526request%253DDescribeFrameworks%26dataset_url%3Dhttp%253A%252F%252F"+stage.basename+"%252F"+cached_data_folder+"%252F"+icd+".xml";
 	var content_sel=$('#content-selection-text');
-	var dataset_link='<a href="'+dataset_url+'">DATASET URL</a>';
-	var gdas_link='<a href="'+gdas+'">GDAS URL</a>';
+	var dataset_link='<a href="'+dataset_url+'" target="_blank">DATASET URL</a>';
+	var gdas_link='<a href="'+gdas+'" target="_blank">GDAS URL</a>';
 
 	if (content_sel.find("span#sdmx").length==0)
 		content_sel.append('<span id="sdmx">'+dataset_link+'</span><br>');
@@ -2015,7 +2015,7 @@ stage.onVariableSelected=function(link,tag_id)
 			data: p,
 			dataType: 'xml',
 			success: function(data){
-		var join_data_result_link='<a href="http://'+stage.tjsBasename+'/geoserver/tjs?'+$.param(p)+'">JoinData result</a>';
+		var join_data_result_link='<a href="http://'+stage.tjsBasename+'/geoserver/tjs?'+$.param(p)+'" target="_blank">JoinData result</a>';
 		if (content_sel.find("span#JoinData").length==0)
 			content_sel.append('<span id="JoinData">'+join_data_result_link+'</span><br>');
 		else
