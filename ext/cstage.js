@@ -1940,7 +1940,13 @@ stage.getGDASLink=function(url)
 {
 	//url = encodeURI(url);
 	url = (url).replace(/[&]/g, '%26');
-	return "http://"+stage.tjsBasename+"/convert/a/convert/odata?tjs_url=http://"+stage.tjsBasename+"/geoserver/tjs&framework_uri=" + stage.selectedFrameworkURI + "&dataset_url=" + url;
+	if ($('#custom-dataset-key').val() === "" ) {
+		resultURL = "http://"+stage.tjsBasename+"/convert/a/convert/odata?tjs_url=http://"+stage.tjsBasename+"/geoserver/tjs&framework_uri=" + stage.selectedFrameworkURI + "&dataset_url=" + url;
+	} else {
+		resultURL = "http://"+stage.tjsBasename+"/convert/a/convert/csv?tjs_url=http://"+stage.tjsBasename+"/geoserver/tjs&framework_uri=" + stage.selectedFrameworkURI + "&dataset_url=" + url + "&dataset_key=" + $('#custom-dataset-key').val();
+	}
+
+	return resultURL
 }
 
 stage.onVariableSelected=function(link,tag_id)
@@ -3151,8 +3157,8 @@ stage.init_links=function()
 	});
 
 	// Quick&dirty hack
-	$('#free-odata-button').click(function() {
-		var custom_url = $('#free-odata-url').val();
+	$('#custom-dataset-button').click(function() {
+		var custom_url = $('#custom-dataset-url').val();
 		tjsdata[2] = {"ICD10": "custom", "definition": "Custom URL", "url": custom_url};
 		$('a:contains("Custom URL")').click();
 
