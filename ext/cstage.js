@@ -1938,7 +1938,8 @@ stage.getSDMXLink=function (icd)
 
 stage.getGDASLink=function(url)
 {
-	url = encodeURI(url);
+	//url = encodeURI(url);
+	url = (url).replace(/[&]/g, '%26');
 	return "http://"+stage.tjsBasename+"/convert/a/convert/odata?tjs_url=http://"+stage.tjsBasename+"/geoserver/tjs&framework_uri=" + stage.selectedFrameworkURI + "&dataset_url=" + url;
 }
 
