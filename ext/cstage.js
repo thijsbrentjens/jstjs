@@ -2045,23 +2045,35 @@ stage.onVariableSelected=function(link,tag_id)
 		p.version = '1.0.0';
 		p.request = 'GetFeature';
 		p.typeName = '__temp:' + stage.layerTable;
-		p.propertyName = 'id,statcode,statnaam,' + dimensions.join(',');
+		// Thijs Brentjens (Geonovum): don't use the id-attribute any longer. This is removed from July 1st from CBS data. Use the statcode instead, see comments elsewhere on statcode too.
+		// p.propertyName = 'id,statcode,statnaam,' + dimensions.join(',');
+		p.propertyName = 'statcode,statnaam,' + dimensions.join(',');
 		p.outputFormat = 'application/json';
 
 		//{'p':'?service=WFS&version=1.0.0&request=GetFeature&typeName=__temp:'+stage.layerTable+'&propertyName=ICC,NUTS_CODE,NUTS_LABEL,'+dimensions.join(',')+',OBJECTID&outputFormat=application/json'}
 
 		stage.jqXHRs['variableValues']=$.ajax({ url: 'http://' + stage.tjsBasename + '/geoserver/tjs', data: p, dataType: 'json', success: function(data){
 			//data=jQuery.parseJSON(data);
-
 			stage.variableValues=[];
 			var fnames=[];
 			var dim = $('#level-datum li.active').text();
 			for (var i=0; i<data.features.length;++i)
 			{
 				var prop=data.features[i].properties;
-				var iccode=parseInt(prop['id']);
+				// Thijs Brentjens (Geonovum): workaround to get a number only for ids: for CBS we can safely use statcode.
+				// CBS data does not have a separate id-attribute any longer as of July 1st 2016. Use the statcode now, but this is a String.
+				// Note that the SLD needs to use the statcode as well.
+				// So that the SLD does parse the integer value the same, to use the same ID value in the end.
+				// Geoserver has Filter Functions to accomplish this.
+
+				// Deprecatad:
+				// var iccode=parseInt(prop['id']);
+
+				// New:
+				// parse the numeric value from the statcode
+				var iccode = parseInt(prop['statcode'].match(/\d+$/)[0])
 				stage.variableValues[iccode]=prop[dim];
-				fnames[iccode]="id: "+prop.id+"<br>statcode: "+prop.statcode+"<br>statnaam: "+prop.statnaam;
+				fnames[iccode]="id: "+iccode+"<br>statcode: "+prop.statcode+"<br>statnaam: "+prop.statnaam;
 			}
 
 			var lngth=stage.variableValues.length;
@@ -2280,7 +2292,7 @@ stage.setVariablePaginationWidget=function(control_id,fun)
 					//years.push(2014);
 				});
 			//years.sort();
-			console.log(years);
+			// console.log(years);
 
 			var pw="<div id='level-datum' class='pagination pagination-small' style='margin: 5px 0;'><ul>";
 
